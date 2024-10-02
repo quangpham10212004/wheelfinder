@@ -1,1 +1,1 @@
-hệ thống quản lý bãi đỗ xe cho phép quản lý thông tin xe vào, ra, lưu trữ trạng thái các chỗ đỗ, tính toán phí đỗ xe dựa trên thời gian đỗ xe. 
+đây là công cụ giúp người dùng tìm kiếm, so sánh và lựa chọn xe phù hợp với nhu cầu và tài chính cá nhân. Thông qua việc tổng hợp thông tin từ các đại lý, trang web bán xe và đánh giá của người dùng, phần mềm cung cấp các tính năng như lọc theo thương hiệu, kiểu dáng, giá cả, thông số kỹ thuật và tính năng xe.
