@@ -1,1 +1,2 @@
 đây là công cụ giúp người dùng tìm kiếm, so sánh và lựa chọn xe phù hợp với nhu cầu và tài chính cá nhân. Thông qua việc tổng hợp thông tin từ các đại lý, trang web bán xe và đánh giá của người dùng, phần mềm cung cấp các tính năng như lọc theo thương hiệu, kiểu dáng, giá cả, thông số kỹ thuật và tính năng xe.
+LnkUML : https://drive.google.com/file/d/1noX1kCWBC5Fph2BQj5Us5VrvWKy8aBMc/view?fbclid=IwZXh0bgNhZW0CMTAAAR2XII7vvDEtvTPkY1s7SH9TXEg_u102-7H-gpEIe1jEDLn5VvZsivIc6Cs_aem_K57Mq98WuDcMYgz5UhQgHg
