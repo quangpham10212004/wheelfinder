@@ -1,4 +1,4 @@
-package src;
+package src.main.Model;
 import java.lang.*;
 import java.util.*;
 public class Cart {
