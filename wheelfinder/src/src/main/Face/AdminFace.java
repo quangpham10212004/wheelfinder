@@ -23,7 +23,6 @@ public class AdminFace extends JFrame {
         JButton addCarBtn = new JButton("Thêm Xe Mới");
         JButton updateCarBtn = new JButton("Cập Nhật Xe");
         JButton deleteCarBtn = new JButton("Xóa Xe");
-        JButton viewAllRentsBtn = new JButton("Xe Đang Được Thuê");
         JButton viewUsersBtn = new JButton("Quản Lý Người Dùng");
         JButton changePassword = new JButton("Đổi Mật Khẩu");
         JButton logoutBtn = new JButton("Đăng Xuất");
@@ -33,7 +32,6 @@ public class AdminFace extends JFrame {
         backgroundPanel.add(addCarBtn);
         backgroundPanel.add(updateCarBtn);
         backgroundPanel.add(deleteCarBtn);
-        backgroundPanel.add(viewAllRentsBtn);
         backgroundPanel.add(viewUsersBtn);
         backgroundPanel.add(changePassword);
         backgroundPanel.add(logoutBtn);

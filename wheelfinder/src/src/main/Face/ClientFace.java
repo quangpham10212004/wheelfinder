@@ -20,16 +20,14 @@ public class ClientFace extends JFrame {
 
         // Các nút bấm
         JButton viewCarsBtn = new JButton("Xem Danh Sách Xe");
-        JButton rentCarBtn = new JButton("Thuê Xe");
-        JButton returnCarBtn = new JButton("Trả Xe");
-        JButton viewRentHistoryBtn = new JButton("Lịch Sử Thuê Xe");
+        JButton rentCarBtn = new JButton("Mua Xe");
+        JButton viewRentHistoryBtn = new JButton("Lịch Sử Mua Xe");
         JButton changePassword = new JButton("Đổi mật khẩu");
         JButton logoutBtn = new JButton("Đăng Xuất");
 
         // Thêm các nút vào panel
         backgroundPanel.add(viewCarsBtn);
         backgroundPanel.add(rentCarBtn);
-        backgroundPanel.add(returnCarBtn);
         backgroundPanel.add(viewRentHistoryBtn);
         backgroundPanel.add(changePassword);
         backgroundPanel.add(logoutBtn);
