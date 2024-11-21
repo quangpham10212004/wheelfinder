@@ -1,4 +1,4 @@
-package src.main.Face;
+package main.java.UI;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -28,12 +28,17 @@ public class StartFace extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new BackgroundPanel("src/main/resources/start.PNG");
+        jPanel1 = new BackgroundPanel("main/java/resources/start.PNG");
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/main/resources/letstart.PNG"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/java/resources/letstart.PNG"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StartFace.this.actionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -49,7 +54,7 @@ public class StartFace extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(89, 89, 89)
                 .addComponent(jButton1)
-                .addContainerGap(246, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -67,6 +72,13 @@ public class StartFace extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void actionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionPerformed
+        LoginFace LoginFace = new LoginFace();
+        LoginFace.setVisible(true);
+        dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actionPerformed
 
     /**
      * @param args the command line arguments
@@ -107,7 +119,7 @@ public class StartFace extends javax.swing.JFrame {
 
         public BackgroundPanel(String fileName) {
             // Sử dụng đường dẫn tuyệt đối
-            backgroundImage = new ImageIcon(getClass().getResource("/src/main/resources/start.PNG")).getImage();
+            backgroundImage = new ImageIcon(getClass().getResource("/main/java/resources/start.PNG")).getImage();
     }
 
         @Override

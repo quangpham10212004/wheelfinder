@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package src.main.Face;
+package main.java.UI;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -31,7 +31,7 @@ public class LoginFace extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new BackgroundPanel("/src/main/resources/Login.PNG");
+        jPanel1 = new BackgroundPanel("/main/java/resources/Login.PNG");
         btnLogin = new javax.swing.JButton();
         btnCreateNewAcount = new javax.swing.JButton();
         txtEmail = new javax.swing.JTextField();
@@ -168,7 +168,7 @@ public class LoginFace extends javax.swing.JFrame {
         private Image backgroundImage;
 
         public BackgroundPanel(String fileName) {
-            backgroundImage = new ImageIcon(getClass().getResource("/src/main/resources/Login.PNG")).getImage();
+            backgroundImage = new ImageIcon(getClass().getResource("/main/java/resources/Login.PNG")).getImage();
     }
 
         @Override

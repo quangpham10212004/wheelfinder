@@ -1,4 +1,4 @@
-package src.main.Face;
+package main.java.UI;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,7 +14,7 @@ public class ClientFace extends JFrame {
         setLocationRelativeTo(null);
 
         // Tạo BackgroundPanel với ảnh nền
-        JPanel backgroundPanel = new BackgroundPanel("/src/main/resources/BackGround.PNG");
+        JPanel backgroundPanel = new BackgroundPanel("/main/java/resources/BackGround.PNG");
         backgroundPanel.setLayout(new GridLayout(3, 2, 10, 10));
         backgroundPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 

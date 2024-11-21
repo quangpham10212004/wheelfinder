@@ -8,6 +8,7 @@
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Model/Database.java</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Model/Operation.java</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Model/Cart.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Face/RegisterFace.java</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Face/ClientFace.java</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Model/Admin.java</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/ghichu.txt</file>
@@ -18,6 +19,7 @@
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Model/User.java</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/resources/letstart.PNG</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Face/StartFace.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Face/LoginFace.java</file>
         </group>
     </open-files>
 </project-private>

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package src.main.Face;
+package main.java.UI;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -31,7 +31,7 @@ public class RegisterFace extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new BackgroundPanel("/src/main/resources/Register.PNG");
+        jPanel1 = new BackgroundPanel("/main/java/resources/Register.PNG");
         btnDone = new javax.swing.JButton();
         txtEmail = new javax.swing.JTextField();
         txtPassword = new javax.swing.JTextField();
@@ -54,7 +54,7 @@ public class RegisterFace extends javax.swing.JFrame {
             }
         });
 
-        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/main/resources/Back.PNG"))); // NOI18N
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/java/resources/Back.PNG"))); // NOI18N
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -70,7 +70,7 @@ public class RegisterFace extends javax.swing.JFrame {
                 .addComponent(btnBack)
                 .addGap(115, 115, 115)
                 .addComponent(btnDone, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(247, Short.MAX_VALUE))
+                .addContainerGap(235, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -181,7 +181,7 @@ public class RegisterFace extends javax.swing.JFrame {
         private Image backgroundImage;
 
         public BackgroundPanel(String fileName) {
-            backgroundImage = new ImageIcon(getClass().getResource("/src/main/resources/Register.PNG")).getImage();
+            backgroundImage = new ImageIcon(getClass().getResource("/main/java/resources/Register.PNG")).getImage();
     }
 
         @Override
