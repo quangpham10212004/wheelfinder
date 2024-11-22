@@ -1,14 +1,15 @@
-package Interact;
+package main.java.Interact;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import main.java.Entity.Car;
+import main.java.Entity.Database;
+import main.java.Entity.Operation;
+import main.java.Entity.User;
 
-import Entity.Car;
-import Entity.Database;
-import Entity.Operation;
-import Entity.User;
+
 
 public class ViewCar implements Operation{
     @Override

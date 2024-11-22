@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Entity;
+package main.java.Entity;
 
 import java.sql.Statement;
 import java.sql.Connection;
@@ -17,7 +17,7 @@ import java.sql.SQLException;
 public class Database {
     private String user = "root";
     private String password = "Quang@2004";
-    private String url = "jdbc:mysql://localhost/carbuyingsystem";
+    private String url = "jdbc:mysql://localhost:3306/wheelfinder";
     private Statement statement ;
     public Database(){
         try {

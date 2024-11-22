@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Entity/Client.java</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Interact/AddNewAccount.java</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Interact/UpdateCar.java</file>
@@ -17,6 +18,7 @@
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Entity/Buys.java</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Interact/DeleteCar.java</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Interact/AddNewCar.java</file>
+>>>>>>> 49b6964d1c2a9555da7d16b9e7f5ab0b244d6166
         </group>
     </open-files>
 </project-private>

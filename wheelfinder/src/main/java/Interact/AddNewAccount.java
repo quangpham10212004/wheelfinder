@@ -1,16 +1,15 @@
 
-package Interact;
+package main.java.Interact;
 
-import Entity.Admin;
-import Entity.Client;
-import Entity.Database;
-import Entity.Operation;
-import Entity.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import main.java.Entity.Client;
+import main.java.Entity.Database;
+import main.java.Entity.Operation;
+import main.java.Entity.User;
 
 
 public class AddNewAccount implements Operation {
