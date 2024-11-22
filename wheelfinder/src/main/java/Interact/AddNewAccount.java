@@ -1,4 +1,3 @@
-
 package main.java.Interact;
 
 
@@ -53,7 +52,7 @@ public class AddNewAccount implements Operation {
                 return;
             }
 
-            String insert = "insert into carbuyingsystem.user (firstName, lastName, email,  phoneNum, passwrd, typeNum)\n" + //
+            String insert = "insert into user (firstName, lastName, email,  phoneNum, passwrd, typeNum)\n" + //
                                 "values"+"('"+firstName+"','"+lastName+"','"+email+"','"+phoneNum+"','"+passwrd+"','"+accType+"')";
             database.getStatement().execute(insert);
             System.out.println("Created new account successfully!"); 
