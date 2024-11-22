@@ -3,23 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Model/Rent.java</file>
-            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/resources/BackGround.PNG</file>
-            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Model/Database.java</file>
-            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Model/Operation.java</file>
-            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Model/Cart.java</file>
-            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Face/RegisterFace.java</file>
-            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Face/ClientFace.java</file>
-            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Model/Admin.java</file>
-            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/ghichu.txt</file>
-            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Model/Client.java</file>
-            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Face/AdminFace.java</file>
-            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Model/Car.java</file>
-            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/resources/start.PNG</file>
-            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Model/User.java</file>
-            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/resources/letstart.PNG</file>
-            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Face/StartFace.java</file>
-            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/src/main/Face/LoginFace.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Entity/Client.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Interact/AddNewAccount.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Interact/UpdateCar.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/UI/StartFace.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Entity/Car.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/UI/AdminFace.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/UI/LoginFace.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Main/Main.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Entity/Database.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/UI/RegisterFace.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/UI/ClientFace.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Entity/Buys.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Interact/DeleteCar.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Interact/AddNewCar.java</file>
         </group>
     </open-files>
 </project-private>
