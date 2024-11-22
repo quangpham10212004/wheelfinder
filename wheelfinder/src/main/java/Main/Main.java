@@ -1,17 +1,17 @@
 
-package Main;
+package main.java.Main;
 
-import Entity.Admin;
-import Entity.Client;
-import Entity.Database;
-import Entity.User;
-import Interact.AddNewAccount;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import main.java.Entity.Admin;
+import main.java.Entity.Client;
+import main.java.Entity.Database;
+import main.java.Entity.User;
+import main.java.Interact.AddNewAccount;
 
 public class Main {
     public static void main(String[] args) {

@@ -50,12 +50,12 @@ CREATE TABLE `car` (
   `brand` varchar(50) NOT NULL,
   `model` varchar(50) NOT NULL,
   `color` varchar(20) DEFAULT NULL,
-  `year` int NOT NULL,
+  `yearRelease` int DEFAULT NULL,
   `price` decimal(10,2) NOT NULL,
   `available` tinyint(1) NOT NULL,
   PRIMARY KEY (`ID`),
   CONSTRAINT `car_chk_1` CHECK ((`available` in (0,1)))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,6 +64,7 @@ CREATE TABLE `car` (
 
 LOCK TABLES `car` WRITE;
 /*!40000 ALTER TABLE `car` DISABLE KEYS */;
+INSERT INTO `car` VALUES (1,'Toyota','Camry','White',2022,30000.00,1),(2,'Toyota','Corolla','Black',2021,20000.00,1),(3,'Honda','Civic','Silver',2020,22000.00,1),(4,'Honda','Accord','Blue',2022,35000.00,1),(5,'Ford','Focus','Red',2019,18000.00,1),(6,'Ford','Mustang','Yellow',2023,45000.00,1),(7,'BMW','X5','Black',2022,60000.00,1),(8,'BMW','3 Series','White',2021,40000.00,1),(9,'Mercedes','C-Class','Gray',2021,50000.00,1),(10,'Mercedes','E-Class','Black',2023,70000.00,1),(11,'Hyundai','Elantra','White',2020,17000.00,1),(12,'Hyundai','Santa Fe','Blue',2021,32000.00,1),(13,'Kia','Seltos','Red',2022,25000.00,1),(14,'Kia','Sorento','White',2021,35000.00,1),(15,'Mazda','CX-5','Silver',2022,33000.00,1),(16,'Mazda','Mazda3','Black',2021,21000.00,1),(17,'Chevrolet','Malibu','Blue',2020,23000.00,1),(18,'Chevrolet','Tahoe','Black',2023,55000.00,1),(19,'Nissan','Altima','White',2021,24000.00,1),(20,'Nissan','Rogue','Silver',2022,27000.00,1),(21,'Audi','A4','Gray',2022,43000.00,1),(22,'Audi','Q5','Black',2023,52000.00,1),(23,'Volkswagen','Passat','White',2021,30000.00,1),(24,'Volkswagen','Tiguan','Blue',2022,34000.00,1),(25,'Subaru','Outback','Green',2021,32000.00,1),(26,'Subaru','Forester','Silver',2022,28000.00,1),(27,'Tesla','Model 3','Red',2023,55000.00,1),(28,'Tesla','Model Y','Black',2023,60000.00,1),(29,'Lexus','RX','White',2022,45000.00,1);
 /*!40000 ALTER TABLE `car` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -106,7 +107,7 @@ CREATE TABLE `user` (
   `passwrd` varchar(50) NOT NULL,
   `typeNum` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -115,7 +116,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Quang','Pham','admin10212004@gmail.com','000','211004',1),(2,'Quang','Pham','admin10212004@gmail.com','000','211004',1),(3,'hung','dao','dvhung','111','111',0),(4,'han','pham','hp123@gmail.com','hp123@gmail.com','111',0),(5,'client0','000','111','000','111',0),(6,'Anakin','Skywalker','admin2@gmail.com','000','1',1),(7,'Han','Pham','admin3@gmail.com','000','1',1);
+INSERT INTO `user` VALUES (1,'Quang','Pham','admin10212004@gmail.com','000','211004',1),(2,'Quang','Pham','admin10212004@gmail.com','000','211004',1),(3,'hung','dao','dvhung','111','111',0),(4,'han','pham','hp123@gmail.com','hp123@gmail.com','111',0),(5,'client0','000','111','000','111',0),(6,'Anakin','Skywalker','admin2@gmail.com','000','1',1),(7,'Han','Pham','admin3@gmail.com','000','1',1),(8,'quang','pham','admin@gmail.com','111','1',0);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -128,4 +129,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-18 23:33:57
+-- Dump completed on 2024-11-22 15:44:10

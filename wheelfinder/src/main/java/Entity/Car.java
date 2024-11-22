@@ -1,5 +1,5 @@
 
-package Entity;
+package main.java.Entity;
 
 public class Car {
 

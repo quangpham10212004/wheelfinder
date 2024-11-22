@@ -2,15 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Entity;
+package main.java.Entity;
+
 
 import java.util.Scanner;
+import main.java.Interact.AddNewAccount;
+import main.java.Interact.AddNewCar;
+import main.java.Interact.DeleteCar;
+import main.java.Interact.UpdateCar;
+import main.java.Interact.ViewCar;
 
-import Interact.AddNewAccount;
-import Interact.AddNewCar;
-import Interact.DeleteCar;
-import Interact.UpdateCar;
-import Interact.ViewCar;
+
+
+
+
 
 
 /**
