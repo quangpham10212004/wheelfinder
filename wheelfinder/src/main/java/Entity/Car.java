@@ -9,7 +9,7 @@ public class Car {
     private String color;
     private int yearRelease;// nsx
     private double price;
-    private int available;  //0 : het hang
+    private int available;  //0 : het hang // new :: bieu thi cho sluong hang
                             //1 : con hang
     public Car() {
     }

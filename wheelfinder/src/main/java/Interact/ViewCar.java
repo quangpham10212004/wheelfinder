@@ -43,8 +43,8 @@ public class ViewCar implements Operation{
             System.out.println("Year Of Manufacture:\t"+cur_car.getYear());
             System.out.println("Price:\t"+cur_car.getPrice()+"$");
             
-            if(cur_car.getAvailable() ==1){
-                System.out.println("Current Status: Available");
+            if(cur_car.getAvailable() >= 1){
+                System.out.println("Current Number Of This Car: "+cur_car.getAvailable());
             }
             else{
                 System.out.println("Current Status: Ran Out Of Stock ");
