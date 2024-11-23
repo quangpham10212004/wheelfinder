@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: carbuyingsystem
+-- Host: 127.0.0.1    Database: wheelfinder
 -- ------------------------------------------------------
 -- Server version	8.0.39
 
@@ -36,6 +36,37 @@ CREATE TABLE `admin` (
 LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `buys`
+--
+
+DROP TABLE IF EXISTS `buys`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `buys` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int DEFAULT NULL,
+  `car_id` int DEFAULT NULL,
+  `timeBuy` varchar(255) DEFAULT NULL,
+  `totalFee` double DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `car_id` (`car_id`),
+  CONSTRAINT `buys_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  CONSTRAINT `buys_ibfk_2` FOREIGN KEY (`car_id`) REFERENCES `car` (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `buys`
+--
+
+LOCK TABLES `buys` WRITE;
+/*!40000 ALTER TABLE `buys` DISABLE KEYS */;
+INSERT INTO `buys` VALUES (1,8,24,'23-11-2024  06:16',34000),(2,8,13,'23-11-2024  06:55',25000),(3,8,14,'23-11-2024  06:57',35000),(4,8,21,'23-11-2024  06:59',43000);
+/*!40000 ALTER TABLE `buys` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -129,4 +160,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-22 15:44:10
+-- Dump completed on 2024-11-23 19:02:59

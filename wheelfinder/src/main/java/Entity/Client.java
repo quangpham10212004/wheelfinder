@@ -1,9 +1,11 @@
 package main.java.Entity;
 import java.util.Scanner;
+import main.java.Interact.BuyCar;
 import main.java.Interact.ViewCar;
 
 public class Client extends User {
-    private Operation[] operations = new Operation[]{ new ViewCar()};
+    private Operation[] operations = new Operation[]{ new ViewCar(),
+    new BuyCar()};
     
     public Client(){
         super();
@@ -15,5 +17,10 @@ public class Client extends User {
         System.out.println("4. Show My Buys");
         System.out.println("5. Edit My Data");
         System.out.println("6. Quit");
+        int i = sc.nextInt();
+        operations[i-1].operation(database, sc, this);
+        showList(database, sc);
     }
+    
+    
 }
