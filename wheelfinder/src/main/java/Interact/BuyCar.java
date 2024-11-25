@@ -1,4 +1,3 @@
-
 package main.java.Interact;
 import java.sql.ResultSet;
 import java.util.Scanner;
@@ -37,22 +36,9 @@ public class BuyCar implements Operation {
             String insert = "INSERT INTO buys (user_id, car_id, timeBuy, totalFee)\n "+
                     "VALUES"+"('"+user.getID()+"','"+car.getID()+"','"+buy.getTime()+"','"+totalFee+"')";
             database.getStatement().execute(insert);
-            ResultSet rs2 = database.getStatement().executeQuery("Select * from buys where car_id ='"+carID+"'; "); // tim thong tin cua xe vua mua trg buys
-            rs2.next();
-            int user_id = rs2.getInt("user_id");
-            ResultSet rs3 = database.getStatement().executeQuery("Select * from user where id ='"+user_id+"'; "); // tim thong tin cua nguoi mua 
-            rs3.next();
-            int cur_number = car.getAvailable() - 1;
+            System.out.println("Buy Successfully!!!");
             
-            System.out.println("Your information is:");
-            System.out.println("# Full Name: "+rs3.getString("lastName")+" "+rs3.getString("firstName"));
-            System.out.println("# Email: "+rs3.getString("email"));
-            System.out.println("# Phone Number: "+rs3.getString("phoneNum"));
-            System.out.println("# Your Car: ");
-            System.out.println("# ID: "+ car.getID());
-            System.out.println("# Car's Name: "+ car.getBrand() +" "+car.getModel()+" "+car.getColor());
-            System.out.println("# Year Of Manufacture: "+car.getYear());
-            System.out.println("# Total Fee: "+car.getPrice());
+            int cur_number = car.getAvailable() - 1;
             database.getStatement().execute("update car set available = '"+cur_number+"' where ID = '"+car.getID()+"'");
         }catch(SQLException e ){
             e.printStackTrace();
