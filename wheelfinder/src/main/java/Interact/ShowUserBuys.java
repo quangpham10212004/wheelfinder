@@ -30,6 +30,10 @@ public class ShowUserBuys implements Operation{
             double total = 0;
             ArrayList<Integer> carIDs = new ArrayList<>();
             
+            if(!rs.next()){
+                System.out.println("You have not bought a car yet ");
+                return;
+            }
             while(rs.next()){
                 int car_id = rs.getInt("car_id");
                 carIDs.add(car_id);
@@ -49,11 +53,16 @@ public class ShowUserBuys implements Operation{
                 rs1.next();
                 System.out.println("# ID: "+ rs1.getInt("ID"));
                 System.out.println("# Car's Name: "+ rs1.getString("brand") +" "+rs1.getString("model")+" "+rs1.getString("color"));
+                System.out.println("# Year Of Manufacture: "+rs1.getString("yearRelease"));
                 System.out.println("# Price: "+rs1.getDouble("price")+"$");
+                
                 String s = "select * from buys where car_id = '"+rs1.getInt("ID")+"';";
                 ResultSet rs2 = database.getStatement().executeQuery(s);
                 rs2.next();
-                System.out.println("# Year Of Manufacture: "+rs2.getString("timeBuy"));
+                
+                System.out.println("# Bought At: "+rs2.getString("timeBuy"));
+                String tb = rs2.getString("timeBuy");
+                database.getStatement().execute("delete from buys where timeBuy ='"+tb+"'");
                 System.out.println("---------------------------------\n");
             }
             System.out.println("Your Total Fee is: "+total+"$");    
