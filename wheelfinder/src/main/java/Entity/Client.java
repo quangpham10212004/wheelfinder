@@ -6,7 +6,7 @@ import main.java.Interact.ViewCar;
 
 public class Client extends User {
     private Operation[] operations = new Operation[]{ new ViewCar(),
-    new BuyCar(), new ShowUserBuys()};
+    new BuyCar(), new ShowUserBuys(1)};
     
     public Client(){
         super();

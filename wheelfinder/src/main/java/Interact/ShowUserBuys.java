@@ -10,22 +10,31 @@ import java.util.ArrayList;
 import main.java.Entity.Buys;
 
 public class ShowUserBuys implements Operation{
-    private int userID;
+    private int typeNum;
     
     public ShowUserBuys(int userID){
-        this.userID = userID;
+        this.typeNum = userID;
     }
-    public ShowUserBuys(){
-        
+    
+    public ShowUserBuys(){}
+    public int getTypeNum() {
+        return typeNum;
     }
-    public int getUserID(){
-        return userID;
-    }
+    
+    
     
     public void operation(Database database, Scanner sc , User user){
         try{
-            String select = "select * from buys where user_id = '"+user.getID()+"';";
-            
+            String select;
+            int tn = this.getTypeNum();
+            if(tn == 0){
+                System.out.println("Enter User ID:" );
+                int uID = sc.nextInt();
+                select = "select * from buys where user_id = '"+uID+"';";
+            }
+            else{
+                select = "select * from buys where user_id = '"+user.getID()+"';";
+            }
             ResultSet rs = database.getStatement().executeQuery(select);
             double total = 0;
             ArrayList<Integer> carIDs = new ArrayList<>();
@@ -42,7 +51,7 @@ public class ShowUserBuys implements Operation{
             }
             ResultSet rs3 = database.getStatement().executeQuery("Select * from user where id ='"+user.getID()+"'; "); // tim thong tin cua nguoi mua 
             rs3.next();
-            System.out.println("Your information is:");
+            System.out.println("Client's information is:");
             System.out.println("# Full Name: "+rs3.getString("lastName")+" "+rs3.getString("firstName"));
             System.out.println("# Email: "+rs3.getString("email"));
             System.out.println("# Phone Number: "+rs3.getString("phoneNum"));
