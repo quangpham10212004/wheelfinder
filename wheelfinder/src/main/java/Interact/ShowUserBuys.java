@@ -29,7 +29,7 @@ public class ShowUserBuys implements Operation{
             ResultSet rs = database.getStatement().executeQuery(select);
             double total = 0;
             ArrayList<Integer> carIDs = new ArrayList<>();
-            
+            ArrayList<String> times = new ArrayList<>();
             if(!rs.next()){
                 System.out.println("You have not bought a car yet ");
                 return;
@@ -37,6 +37,7 @@ public class ShowUserBuys implements Operation{
             while(rs.next()){
                 int car_id = rs.getInt("car_id");
                 carIDs.add(car_id);
+                times.add(rs.getString("timeBuy"));
                 total+=(rs.getDouble("totalFee"));
             }
             ResultSet rs3 = database.getStatement().executeQuery("Select * from user where id ='"+user.getID()+"'; "); // tim thong tin cua nguoi mua 
@@ -47,7 +48,7 @@ public class ShowUserBuys implements Operation{
             System.out.println("# Phone Number: "+rs3.getString("phoneNum"));
             System.out.println("# Your Cars: ");
             System.out.println("---------------------------------\n");
-            
+            int dem = 0;
             for(Integer id : carIDs){
                 ResultSet rs1 = database.getStatement().executeQuery("select * from car where ID = '"+id+"';");
                 rs1.next();
@@ -55,14 +56,8 @@ public class ShowUserBuys implements Operation{
                 System.out.println("# Car's Name: "+ rs1.getString("brand") +" "+rs1.getString("model")+" "+rs1.getString("color"));
                 System.out.println("# Year Of Manufacture: "+rs1.getString("yearRelease"));
                 System.out.println("# Price: "+rs1.getDouble("price")+"$");
-                
-                String s = "select * from buys where car_id = '"+rs1.getInt("ID")+"';";
-                ResultSet rs2 = database.getStatement().executeQuery(s);
-                rs2.next();
-                
-                System.out.println("# Bought At: "+rs2.getString("timeBuy"));
-                String tb = rs2.getString("timeBuy");
-                database.getStatement().execute("delete from buys where timeBuy ='"+tb+"'");
+                System.out.println("# Bought At: "+times.get(dem));
+                dem++;
                 System.out.println("---------------------------------\n");
             }
             System.out.println("Your Total Fee is: "+total+"$");    
