@@ -3,22 +3,28 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Entity/Client.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/nbproject/build-impl.xml</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/nbproject/project.properties</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/nbproject/genfiles.properties</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Interact/AddNewAccount.java</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Interact/UpdateCar.java</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/UI/StartFace.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/nbproject/private/private.xml</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Entity/Car.java</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/UI/AdminFace.java</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/UI/LoginFace.java</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Main/Main.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/nbproject/project.xml</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Entity/Database.java</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/UI/RegisterFace.java</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/UI/ClientFace.java</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Entity/Buys.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Entity/Operation.java</file>
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Entity/User.java</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Interact/DeleteCar.java</file>
             <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Interact/AddNewCar.java</file>
->>>>>>> 49b6964d1c2a9555da7d16b9e7f5ab0b244d6166
+            <file>file:/D:/Minh/wheelfinder/wheelfinder/src/main/java/Interact/ViewCar.java</file>
         </group>
     </open-files>
 </project-private>
