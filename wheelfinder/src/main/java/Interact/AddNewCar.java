@@ -21,8 +21,10 @@ public class AddNewCar implements Operation{
         String yearRelease = sc.next();
         
         System.out.println("Enter this car's price: ");
+        
         double price = Double.parseDouble(sc.next());
-        int available = 0;
+        System.out.println("Enter the number of this car: ");
+        int available = sc.nextInt();
         try {
             String insert = "insert into car(brand, model, color, yearRelease, price, available)\n" + //
                                 "values "+"('"+brand+"','"+model+"','"+color+"','"+yearRelease+"','"+price+"','"+available+"')";

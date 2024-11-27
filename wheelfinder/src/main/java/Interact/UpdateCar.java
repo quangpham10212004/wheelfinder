@@ -29,42 +29,32 @@ public class UpdateCar implements Operation{
             car.setYear(rs.getInt("yearRelease"));
             car.setPrice(rs.getDouble("price"));
             car.setAvailable(rs.getInt("available"));      
-            System.out.println("Which do you want to update?");
-            System.out.println("0. Everything\n1. Only Status");
-            int q = sc.nextInt();
-            if(q == 0){
-                System.out.println("Enter (-1) to enter old value");
-                System.out.println("Enter New Branch: (-1) "+car.getBrand());
-                String brand = sc.next();
-                if(brand.equals("-1")) brand = car.getBrand();
-                System.out.println("Enter New Model: (-1) " + car.getModel());
-                String model = sc.next();
-                if(model.equals("-1")) model = car.getModel();
-                System.out.println("Enter New Color: (-1) " + car.getColor());
-                String color = sc.next();
-                if(color.equals("-1")) color = car.getColor();
-                System.out.println("Enter Year Of Manufacture: (-1) "+car.getYear());
-                int yearRelease = sc.nextInt();
-                if(yearRelease == -1) yearRelease = car.getYear();
-                System.out.println("Enter New Price: (-1) "+car.getPrice());
-                double price = sc.nextDouble();
-                if(price == -1) price = car.getPrice();
-                System.out.println("Enter New Status: (-1) "+car.getAvailable());
-                int available = sc.nextInt();
-                if(available == -1) available = car.getAvailable();
-                String update = "update car\n" + 
-                "set brand = '"+brand+"', model = '"+model+"', color ='"+color+"',yearRelease = '"+yearRelease+"',price = '"+price+"',available ='"+available+"'" + 
-                                        "where id ='"+cur_id+"' ";
-                database.getStatement().execute(update);
-                System.out.println("Updated!");
-            }
-            else {
-                System.out.println("Enter New Status: ");
-                int available = sc.nextInt();
-                String update = "update car set available ='"+available+"' where id ='"+cur_id+"'";
-                database.getStatement().execute(update);
-                System.out.println("Updated!!");
-            }
+            
+            System.out.println("Enter (-1) to enter old value");
+            System.out.println("Enter New Branch: (-1) "+car.getBrand());
+            String brand = sc.next();
+            if(brand.equals("-1")) brand = car.getBrand();
+            System.out.println("Enter New Model: (-1) " + car.getModel());
+            String model = sc.next();
+            if(model.equals("-1")) model = car.getModel();
+            System.out.println("Enter New Color: (-1) " + car.getColor());
+            String color = sc.next();
+            if(color.equals("-1")) color = car.getColor();
+            System.out.println("Enter Year Of Manufacture: (-1) "+car.getYear());
+            int yearRelease = sc.nextInt();
+            if(yearRelease == -1) yearRelease = car.getYear();
+            System.out.println("Enter New Price: (-1) "+car.getPrice());
+            double price = sc.nextDouble();
+            if(price == -1) price = car.getPrice();
+            System.out.println("Enter New Status: (-1) "+car.getAvailable());
+            int available = sc.nextInt();
+            if(available == -1) available = car.getAvailable();
+            String update = "update car\n" + 
+            "set brand = '"+brand+"', model = '"+model+"', color ='"+color+"',yearRelease = '"+yearRelease+"',price = '"+price+"',available ='"+available+"'" + 
+                                    "where id ='"+cur_id+"' ";
+            database.getStatement().execute(update);
+            System.out.println("Updated!");
+            
 
 
         } catch (SQLException e) {

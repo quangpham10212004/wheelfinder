@@ -1,4 +1,3 @@
-
 package main.java.Main;
 
 
@@ -8,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import main.java.Entity.Admin;
-import main.java.Entity.Client;
+import main.java.Entity.Client; 
 import main.java.Entity.Database;
 import main.java.Entity.User;
 import main.java.Interact.AddNewAccount;
@@ -18,7 +17,7 @@ public class Main {
         Database database = new Database();
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("WELCOME TO WHEELFINDER\n");
+//        System.out.println("WELCOME TO WHEELFINDER\n");
         System.out.println("Enter your email:\nOr Enter (-1) to Create New Account:\n\n  ");
         String email = sc.next();
         if(email.equals("-1")){

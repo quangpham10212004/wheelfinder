@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: carbuyingsystem
+-- Host: 127.0.0.1    Database: wheelfinder
 -- ------------------------------------------------------
 -- Server version	8.0.39
 
@@ -39,6 +39,37 @@ LOCK TABLES `admin` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `buys`
+--
+
+DROP TABLE IF EXISTS `buys`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `buys` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int DEFAULT NULL,
+  `car_id` int DEFAULT NULL,
+  `timeBuy` varchar(255) DEFAULT NULL,
+  `totalFee` double DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `car_id` (`car_id`),
+  CONSTRAINT `buys_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  CONSTRAINT `buys_ibfk_2` FOREIGN KEY (`car_id`) REFERENCES `car` (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `buys`
+--
+
+LOCK TABLES `buys` WRITE;
+/*!40000 ALTER TABLE `buys` DISABLE KEYS */;
+INSERT INTO `buys` VALUES (1,8,24,'23-11-2024  06:16',34000),(2,8,13,'23-11-2024  06:55',25000),(3,8,14,'23-11-2024  06:57',35000),(4,8,21,'23-11-2024  06:59',43000),(5,8,29,'23-11-2024  09:00',45000),(6,8,29,'23-11-2024  09:04',45000),(7,8,29,'23-11-2024  09:09',45000);
+/*!40000 ALTER TABLE `buys` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `car`
 --
 
@@ -52,9 +83,8 @@ CREATE TABLE `car` (
   `color` varchar(20) DEFAULT NULL,
   `yearRelease` int DEFAULT NULL,
   `price` decimal(10,2) NOT NULL,
-  `available` tinyint(1) NOT NULL,
-  PRIMARY KEY (`ID`),
-  CONSTRAINT `car_chk_1` CHECK ((`available` in (0,1)))
+  `available` int DEFAULT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -64,7 +94,7 @@ CREATE TABLE `car` (
 
 LOCK TABLES `car` WRITE;
 /*!40000 ALTER TABLE `car` DISABLE KEYS */;
-INSERT INTO `car` VALUES (1,'Toyota','Camry','White',2022,30000.00,1),(2,'Toyota','Corolla','Black',2021,20000.00,1),(3,'Honda','Civic','Silver',2020,22000.00,1),(4,'Honda','Accord','Blue',2022,35000.00,1),(5,'Ford','Focus','Red',2019,18000.00,1),(6,'Ford','Mustang','Yellow',2023,45000.00,1),(7,'BMW','X5','Black',2022,60000.00,1),(8,'BMW','3 Series','White',2021,40000.00,1),(9,'Mercedes','C-Class','Gray',2021,50000.00,1),(10,'Mercedes','E-Class','Black',2023,70000.00,1),(11,'Hyundai','Elantra','White',2020,17000.00,1),(12,'Hyundai','Santa Fe','Blue',2021,32000.00,1),(13,'Kia','Seltos','Red',2022,25000.00,1),(14,'Kia','Sorento','White',2021,35000.00,1),(15,'Mazda','CX-5','Silver',2022,33000.00,1),(16,'Mazda','Mazda3','Black',2021,21000.00,1),(17,'Chevrolet','Malibu','Blue',2020,23000.00,1),(18,'Chevrolet','Tahoe','Black',2023,55000.00,1),(19,'Nissan','Altima','White',2021,24000.00,1),(20,'Nissan','Rogue','Silver',2022,27000.00,1),(21,'Audi','A4','Gray',2022,43000.00,1),(22,'Audi','Q5','Black',2023,52000.00,1),(23,'Volkswagen','Passat','White',2021,30000.00,1),(24,'Volkswagen','Tiguan','Blue',2022,34000.00,1),(25,'Subaru','Outback','Green',2021,32000.00,1),(26,'Subaru','Forester','Silver',2022,28000.00,1),(27,'Tesla','Model 3','Red',2023,55000.00,1),(28,'Tesla','Model Y','Black',2023,60000.00,1),(29,'Lexus','RX','White',2022,45000.00,1);
+INSERT INTO `car` VALUES (1,'Toyota','Camry','White',2022,30000.00,12),(2,'Toyota','Corolla','Black',2021,20000.00,7),(3,'Honda','Civic','Silver',2020,22000.00,9),(4,'Honda','Accord','Blue',2022,35000.00,12),(5,'Ford','Focus','Red',2019,18000.00,12),(6,'Ford','Mustang','Yellow',2023,45000.00,12),(7,'BMW','X5','Black',2022,60000.00,11),(8,'BMW','3 Series','White',2021,40000.00,7),(9,'Mercedes','C-Class','Gray',2021,50000.00,8),(10,'Mercedes','E-Class','Black',2023,70000.00,9),(11,'Hyundai','Elantra','White',2020,17000.00,9),(12,'Hyundai','Santa Fe','Blue',2021,32000.00,6),(13,'Kia','Seltos','Red',2022,25000.00,11),(14,'Kia','Sorento','White',2021,35000.00,10),(15,'Mazda','CX-5','Silver',2022,33000.00,12),(16,'Mazda','Mazda3','Black',2021,21000.00,11),(17,'Chevrolet','Malibu','Blue',2020,23000.00,12),(18,'Chevrolet','Tahoe','Black',2023,55000.00,9),(19,'Nissan','Altima','White',2021,24000.00,12),(20,'Nissan','Rogue','Silver',2022,27000.00,11),(21,'Audi','A4','Gray',2022,43000.00,6),(22,'Audi','Q5','Black',2023,52000.00,6),(23,'Volkswagen','Passat','White',2021,30000.00,6),(24,'Volkswagen','Tiguan','Blue',2022,34000.00,6),(25,'Subaru','Outback','Green',2021,32000.00,7),(26,'Subaru','Forester','Silver',2022,28000.00,12),(27,'Tesla','Model 3','Red',2023,55000.00,7),(28,'Tesla','Model Y','Black',2023,60000.00,12),(29,'Lexus','RX','White',2022,45000.00,11);
 /*!40000 ALTER TABLE `car` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,4 +159,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-22 15:44:10
+-- Dump completed on 2024-11-25 10:48:34
