@@ -80,7 +80,7 @@ public class UserDashboard extends javax.swing.JFrame {
         retypeNewPassChangeTextField = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Wheel Finder Admin");
+        setTitle("Wheel Finder User");
         setResizable(false);
 
         sideBar.setBackground(new java.awt.Color(54, 171, 239));
