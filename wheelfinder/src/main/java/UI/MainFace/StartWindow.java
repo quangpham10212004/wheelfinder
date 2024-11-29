@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package main.java.UI.WelcomeFace;
+package main.java.UI.MainFace;
 
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -85,7 +85,6 @@ public class StartWindow extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Wheel Finder");
-        setPreferredSize(new java.awt.Dimension(800, 500));
         setResizable(false);
 
         bigContainer.setLayout(new java.awt.CardLayout());
@@ -128,6 +127,11 @@ public class StartWindow extends javax.swing.JFrame {
         loginButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         loginButton.setForeground(new java.awt.Color(255, 255, 255));
         loginButton.setText("Log In");
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginButtonActionPerformed(evt);
+            }
+        });
 
         signupLabel.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         signupLabel.setText("I do not have an account!");
@@ -607,6 +611,11 @@ public class StartWindow extends javax.swing.JFrame {
         SignUp.setVisible(false);
         ForgotPassword.setVisible(true);
     }//GEN-LAST:event_forgotPasswordActionPerformed
+
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_loginButtonActionPerformed
 
 //    private void showPanel(String panelName) {                                                
 //       CardLayout layout = (CardLayout) getContentPane().getLayout();
