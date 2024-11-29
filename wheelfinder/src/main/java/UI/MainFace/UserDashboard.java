@@ -14,12 +14,12 @@ import javax.swing.JPanel;
  *
  * @author admin
  */
-public class AdminDashboard extends javax.swing.JFrame {
+public class UserDashboard extends javax.swing.JFrame {
 
     /**
      * Creates new form AdminDashboard
      */
-    public AdminDashboard() {
+    public UserDashboard() {
         initComponents();
     }
     
@@ -59,34 +59,28 @@ public class AdminDashboard extends javax.swing.JFrame {
         logoutLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         card = new javax.swing.JPanel();
-        CarAdminPanel = new jPanelGradient();
+        CarUserPanel = new jPanelGradient();
         mainContentPanel = new jPanelGradient();
         jScrollPane1 = new javax.swing.JScrollPane();
         viewCarTable = new javax.swing.JTable();
-        addNewCarButton = new javax.swing.JButton();
-        updateCarButton = new javax.swing.JButton();
         deleteCarButton = new javax.swing.JButton();
-        UserAdminPanel = new jPanelGradient();
+        MyBuyUserPanel = new jPanelGradient();
         mainContentPanel1 = new jPanelGradient();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        viewUserTable = new javax.swing.JTable();
-        addNewAdminButton = new javax.swing.JButton();
-        ShowUserBuyButton = new javax.swing.JButton();
-        DeleteUserButton = new javax.swing.JButton();
-        PassAdminPanel = new jPanelGradient();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        BuyUserTable = new javax.swing.JTable();
+        PassUserPanel = new jPanelGradient();
         jPanel8 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jPasswordField5 = new javax.swing.JPasswordField();
-        jButton4 = new javax.swing.JButton();
+        oldPassChangeTextField = new javax.swing.JTextField();
+        newPassChangeTextField = new javax.swing.JPasswordField();
+        changPassButton = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
-        jPasswordField6 = new javax.swing.JPasswordField();
+        retypeNewPassChangeTextField = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Wheel Finder Admin");
-        setPreferredSize(new java.awt.Dimension(1120, 700));
         setResizable(false);
 
         sideBar.setBackground(new java.awt.Color(54, 171, 239));
@@ -112,7 +106,7 @@ public class AdminDashboard extends javax.swing.JFrame {
 
         userLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         userLabel.setForeground(new java.awt.Color(255, 255, 255));
-        userLabel.setText("User");
+        userLabel.setText("My Buy");
         userLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 userLabelMouseClicked(evt);
@@ -145,15 +139,14 @@ public class AdminDashboard extends javax.swing.JFrame {
                 .addGroup(menuSideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(menuSideBarPanelLayout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(carLabel)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(carLabel))
                     .addGroup(menuSideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(menuSideBarPanelLayout.createSequentialGroup()
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGap(18, 18, 18)
-                            .addComponent(userLabel)
-                            .addGap(30, 30, 30))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(userLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(12, 12, 12))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuSideBarPanelLayout.createSequentialGroup()
                             .addGroup(menuSideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -162,7 +155,7 @@ public class AdminDashboard extends javax.swing.JFrame {
                             .addGroup(menuSideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(logoutLabel)
                                 .addComponent(passwordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(6, 6, 6))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         menuSideBarPanelLayout.setVerticalGroup(
             menuSideBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,7 +215,7 @@ public class AdminDashboard extends javax.swing.JFrame {
         card.setBackground(new java.awt.Color(255, 255, 255));
         card.setLayout(new java.awt.CardLayout());
 
-        CarAdminPanel.setBackground(new java.awt.Color(255, 255, 255));
+        CarUserPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         mainContentPanel.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -257,133 +250,84 @@ public class AdminDashboard extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE)
         );
 
-        addNewCarButton.setBackground(new java.awt.Color(54, 171, 239));
-        addNewCarButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        addNewCarButton.setForeground(new java.awt.Color(255, 255, 255));
-        addNewCarButton.setText("Add New Car");
-
-        updateCarButton.setBackground(new java.awt.Color(54, 171, 239));
-        updateCarButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        updateCarButton.setForeground(new java.awt.Color(255, 255, 255));
-        updateCarButton.setText("Update Car");
-        updateCarButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateCarButtonActionPerformed(evt);
-            }
-        });
-
         deleteCarButton.setBackground(new java.awt.Color(54, 171, 239));
         deleteCarButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         deleteCarButton.setForeground(new java.awt.Color(255, 255, 255));
-        deleteCarButton.setText("Delete Car");
+        deleteCarButton.setText("Buy Car");
+        deleteCarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteCarButtonActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout CarAdminPanelLayout = new javax.swing.GroupLayout(CarAdminPanel);
-        CarAdminPanel.setLayout(CarAdminPanelLayout);
-        CarAdminPanelLayout.setHorizontalGroup(
-            CarAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout CarUserPanelLayout = new javax.swing.GroupLayout(CarUserPanel);
+        CarUserPanel.setLayout(CarUserPanelLayout);
+        CarUserPanelLayout.setHorizontalGroup(
+            CarUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(mainContentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(CarAdminPanelLayout.createSequentialGroup()
+            .addGroup(CarUserPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(addNewCarButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(updateCarButton)
-                .addGap(12, 12, 12)
                 .addComponent(deleteCarButton)
                 .addGap(62, 62, 62))
         );
-        CarAdminPanelLayout.setVerticalGroup(
-            CarAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CarAdminPanelLayout.createSequentialGroup()
+        CarUserPanelLayout.setVerticalGroup(
+            CarUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CarUserPanelLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(CarAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(deleteCarButton)
-                    .addComponent(updateCarButton)
-                    .addComponent(addNewCarButton))
+                .addComponent(deleteCarButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(mainContentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        card.add(CarAdminPanel, "CarAdmin");
+        card.add(CarUserPanel, "CarAdmin");
 
-        UserAdminPanel.setBackground(new java.awt.Color(255, 255, 255));
+        MyBuyUserPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         mainContentPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        viewUserTable.setModel(new javax.swing.table.DefaultTableModel(
+        BuyUserTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "First Name", "Last Name", "Email", "Phone Number", "Password"
+                "ID", "Car", "Time", "Total Fee"
             }
         ));
-        jScrollPane2.setViewportView(viewUserTable);
+        jScrollPane3.setViewportView(BuyUserTable);
 
         javax.swing.GroupLayout mainContentPanel1Layout = new javax.swing.GroupLayout(mainContentPanel1);
         mainContentPanel1.setLayout(mainContentPanel1Layout);
         mainContentPanel1Layout.setHorizontalGroup(
             mainContentPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainContentPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE)
                 .addContainerGap())
         );
         mainContentPanel1Layout.setVerticalGroup(
             mainContentPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainContentPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        addNewAdminButton.setBackground(new java.awt.Color(54, 171, 239));
-        addNewAdminButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        addNewAdminButton.setForeground(new java.awt.Color(255, 255, 255));
-        addNewAdminButton.setText("Add New Admin");
-
-        ShowUserBuyButton.setBackground(new java.awt.Color(54, 171, 239));
-        ShowUserBuyButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        ShowUserBuyButton.setForeground(new java.awt.Color(255, 255, 255));
-        ShowUserBuyButton.setText("Show User's Buy");
-        ShowUserBuyButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ShowUserBuyButtonActionPerformed(evt);
-            }
-        });
-
-        DeleteUserButton.setBackground(new java.awt.Color(54, 171, 239));
-        DeleteUserButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        DeleteUserButton.setForeground(new java.awt.Color(255, 255, 255));
-        DeleteUserButton.setText("Delete User");
-
-        javax.swing.GroupLayout UserAdminPanelLayout = new javax.swing.GroupLayout(UserAdminPanel);
-        UserAdminPanel.setLayout(UserAdminPanelLayout);
-        UserAdminPanelLayout.setHorizontalGroup(
-            UserAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout MyBuyUserPanelLayout = new javax.swing.GroupLayout(MyBuyUserPanel);
+        MyBuyUserPanel.setLayout(MyBuyUserPanelLayout);
+        MyBuyUserPanelLayout.setHorizontalGroup(
+            MyBuyUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(mainContentPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(UserAdminPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(addNewAdminButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ShowUserBuyButton)
-                .addGap(12, 12, 12)
-                .addComponent(DeleteUserButton)
-                .addGap(62, 62, 62))
         );
-        UserAdminPanelLayout.setVerticalGroup(
-            UserAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UserAdminPanelLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(UserAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DeleteUserButton)
-                    .addComponent(ShowUserBuyButton)
-                    .addComponent(addNewAdminButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(mainContentPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        MyBuyUserPanelLayout.setVerticalGroup(
+            MyBuyUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(mainContentPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        card.add(UserAdminPanel, "UserAdmin");
+        card.add(MyBuyUserPanel, "UserAdmin");
 
-        PassAdminPanel.setBackground(new java.awt.Color(255, 255, 255));
+        PassUserPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -398,16 +342,16 @@ public class AdminDashboard extends javax.swing.JFrame {
         jLabel28.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel28.setText("New Password");
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        oldPassChangeTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                oldPassChangeTextFieldActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(54, 171, 239));
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Change Password");
+        changPassButton.setBackground(new java.awt.Color(54, 171, 239));
+        changPassButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        changPassButton.setForeground(new java.awt.Color(255, 255, 255));
+        changPassButton.setText("Change Password");
 
         jLabel30.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel30.setText("Retype New Password");
@@ -426,13 +370,13 @@ public class AdminDashboard extends javax.swing.JFrame {
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel30)
                             .addComponent(jLabel27)
-                            .addComponent(jTextField5)
+                            .addComponent(oldPassChangeTextField)
                             .addComponent(jLabel28)
-                            .addComponent(jPasswordField5)
-                            .addComponent(jPasswordField6, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(newPassChangeTextField)
+                            .addComponent(retypeNewPassChangeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(403, 403, 403)
-                        .addComponent(jButton4)))
+                        .addComponent(changPassButton)))
                 .addContainerGap(233, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
@@ -443,34 +387,37 @@ public class AdminDashboard extends javax.swing.JFrame {
                 .addGap(86, 86, 86)
                 .addComponent(jLabel27)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(oldPassChangeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel28)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPasswordField5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(newPassChangeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel30)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPasswordField6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(retypeNewPassChangeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
-                .addContainerGap(252, Short.MAX_VALUE))
+                .addComponent(changPassButton)
+                .addContainerGap(240, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout PassAdminPanelLayout = new javax.swing.GroupLayout(PassAdminPanel);
-        PassAdminPanel.setLayout(PassAdminPanelLayout);
-        PassAdminPanelLayout.setHorizontalGroup(
-            PassAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PassAdminPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout PassUserPanelLayout = new javax.swing.GroupLayout(PassUserPanel);
+        PassUserPanel.setLayout(PassUserPanelLayout);
+        PassUserPanelLayout.setHorizontalGroup(
+            PassUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PassUserPanelLayout.createSequentialGroup()
                 .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        PassAdminPanelLayout.setVerticalGroup(
-            PassAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        PassUserPanelLayout.setVerticalGroup(
+            PassUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PassUserPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        card.add(PassAdminPanel, "PassAdmin");
+        card.add(PassUserPanel, "PassAdmin");
 
         javax.swing.GroupLayout bigContainerLayout = new javax.swing.GroupLayout(bigContainer);
         bigContainer.setLayout(bigContainerLayout);
@@ -503,39 +450,35 @@ public class AdminDashboard extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void updateCarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateCarButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_updateCarButtonActionPerformed
-
-    private void ShowUserBuyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowUserBuyButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ShowUserBuyButtonActionPerformed
-
     private void carLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carLabelMouseClicked
         // TODO add your handling code here:
-        CarAdminPanel.setVisible(true);
-        UserAdminPanel.setVisible(false);
-        PassAdminPanel.setVisible(false);
+        CarUserPanel.setVisible(true);
+        MyBuyUserPanel.setVisible(false);
+        PassUserPanel.setVisible(false);
         
     }//GEN-LAST:event_carLabelMouseClicked
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void oldPassChangeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oldPassChangeTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_oldPassChangeTextFieldActionPerformed
 
     private void userLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userLabelMouseClicked
         // TODO add your handling code here:
-        CarAdminPanel.setVisible(false);
-        UserAdminPanel.setVisible(true);
-        PassAdminPanel.setVisible(false);
+        CarUserPanel.setVisible(false);
+        MyBuyUserPanel.setVisible(true);
+        PassUserPanel.setVisible(false);
     }//GEN-LAST:event_userLabelMouseClicked
 
     private void passwordLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passwordLabelMouseClicked
         // TODO add your handling code here:
-        CarAdminPanel.setVisible(false);
-        UserAdminPanel.setVisible(false);
-        PassAdminPanel.setVisible(true);
+        CarUserPanel.setVisible(false);
+        MyBuyUserPanel.setVisible(false);
+        PassUserPanel.setVisible(true);
     }//GEN-LAST:event_passwordLabelMouseClicked
+
+    private void deleteCarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCarButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteCarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -554,37 +497,35 @@ public class AdminDashboard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminDashboard().setVisible(true);
+                new UserDashboard().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel CarAdminPanel;
-    private javax.swing.JButton DeleteUserButton;
-    private javax.swing.JPanel PassAdminPanel;
-    private javax.swing.JButton ShowUserBuyButton;
-    private javax.swing.JPanel UserAdminPanel;
-    private javax.swing.JButton addNewAdminButton;
-    private javax.swing.JButton addNewCarButton;
+    private javax.swing.JTable BuyUserTable;
+    private javax.swing.JPanel CarUserPanel;
+    private javax.swing.JPanel MyBuyUserPanel;
+    private javax.swing.JPanel PassUserPanel;
     private javax.swing.JPanel bigContainer;
     private javax.swing.JLabel carLabel;
     private javax.swing.JPanel card;
+    private javax.swing.JButton changPassButton;
     private javax.swing.JButton deleteCarButton;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
@@ -595,21 +536,19 @@ public class AdminDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPasswordField jPasswordField5;
-    private javax.swing.JPasswordField jPasswordField6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel logoutLabel;
     private javax.swing.JPanel mainContentPanel;
     private javax.swing.JPanel mainContentPanel1;
     private javax.swing.JPanel menuSideBarPanel;
+    private javax.swing.JPasswordField newPassChangeTextField;
+    private javax.swing.JTextField oldPassChangeTextField;
     private javax.swing.JLabel passwordLabel;
+    private javax.swing.JPasswordField retypeNewPassChangeTextField;
     private javax.swing.JPanel sideBar;
     private javax.swing.JLabel sideBarLogo;
-    private javax.swing.JButton updateCarButton;
     private javax.swing.JLabel userLabel;
     private javax.swing.JTable viewCarTable;
-    private javax.swing.JTable viewUserTable;
     // End of variables declaration//GEN-END:variables
 }
