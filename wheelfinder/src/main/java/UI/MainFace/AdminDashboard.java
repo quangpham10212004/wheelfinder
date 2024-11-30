@@ -128,7 +128,6 @@ public class AdminDashboard extends javax.swing.JFrame {
         addNewCarDialog.setBackground(new java.awt.Color(255, 255, 255));
         addNewCarDialog.setMinimumSize(new java.awt.Dimension(640, 400));
         addNewCarDialog.setModal(true);
-        addNewCarDialog.setPreferredSize(new java.awt.Dimension(640, 400));
         addNewCarDialog.setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -279,7 +278,6 @@ public class AdminDashboard extends javax.swing.JFrame {
         updateCarDialog.setBackground(new java.awt.Color(255, 255, 255));
         updateCarDialog.setMinimumSize(new java.awt.Dimension(640, 400));
         updateCarDialog.setModal(true);
-        updateCarDialog.setPreferredSize(new java.awt.Dimension(640, 400));
         updateCarDialog.setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -421,7 +419,6 @@ public class AdminDashboard extends javax.swing.JFrame {
 
         showUserBuyDialog.setMinimumSize(new java.awt.Dimension(640, 400));
         showUserBuyDialog.setModal(true);
-        showUserBuyDialog.setPreferredSize(new java.awt.Dimension(640, 400));
         showUserBuyDialog.setResizable(false);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);

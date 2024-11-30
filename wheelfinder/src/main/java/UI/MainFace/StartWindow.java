@@ -1,12 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package main.java.UI.MainFace;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException; // Thêm luôn import này để xử lý các ngoại lệ SQL
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
+import main.java.Entity.Database;
+import main.java.UI.MainFace.AdminDashboard;
+import main.java.UI.MainFace.UserDashboard;
 
 
 /**
@@ -670,6 +673,75 @@ public class StartWindow extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         // TODO add your handling code here:
+                                          
+    // Lấy dữ liệu từ các trường nhập
+        String email = emailLoginTextField.getText();
+        String password = passLoginTextField.getText();
+
+    // Kiểm tra nếu email hoặc mật khẩu trống
+        if (email.isEmpty() || password.isEmpty()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Hãy điền đầy đủ thông tin");
+            return;
+    }
+
+    // Khởi tạo đối tượng Database
+        Database database = new Database();
+        boolean isUserValid = false; // Cờ kiểm tra tài khoản hợp lệ
+
+        try {
+        // Truy vấn tất cả người dùng từ cơ sở dữ liệu
+            String query = "SELECT * FROM user";
+            ResultSet rs = database.getStatement().executeQuery(query);
+
+        // Duyệt qua kết quả và tìm kiếm email và mật khẩu tương ứng
+            while (rs.next()) {
+                String dbEmail = rs.getString("email");
+                String dbPassword = rs.getString("passwrd");
+
+            // Kiểm tra email và mật khẩu
+                if (dbEmail.equals(email) && dbPassword.equals(password)) {
+                // Nếu email và mật khẩu hợp lệ
+                    isUserValid = true;
+
+                // Lấy thông tin người dùng
+                    int type = rs.getInt("typeNum");
+                    String firstName = rs.getString("firstName");
+
+                // Thông báo đăng nhập thành công
+                    javax.swing.JOptionPane.showMessageDialog(this, "Đăng nhập thành công! Xin chào " + firstName);
+
+                // Mở màn hình Admin hoặc User tùy vào loại người dùng
+                    if (type == 1) { // Nếu là Admin
+                        AdminDashboard adminDashboard = new AdminDashboard();
+                        adminDashboard.setVisible(true);
+                    } else { // Nếu là User
+                        UserDashboard userDashboard = new UserDashboard();
+                        userDashboard.setVisible(true);
+                }
+
+                // Đóng cửa sổ hiện tại (login form)
+                    dispose();
+                    break;
+            }
+        }
+
+        // Nếu không tìm thấy người dùng với email và mật khẩu hợp lệ
+        if (!isUserValid) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Email hoặc mật khẩu không đúng");
+        }
+
+        // Đóng ResultSet sau khi sử dụng
+        rs.close();
+    } catch (Exception e) {
+        // Nếu có lỗi xảy ra trong quá trình truy vấn
+        e.printStackTrace();
+        javax.swing.JOptionPane.showMessageDialog(this, "Có lỗi xảy ra trong quá trình đăng nhập");
+    }
+
+
+
+
+
         
     }//GEN-LAST:event_loginButtonActionPerformed
 
@@ -683,6 +755,73 @@ public class StartWindow extends javax.swing.JFrame {
 
     private void signUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpButtonActionPerformed
         // TODO add your handling code here:
+        // TODO add your handling code here:
+String firstName = emailSignupTextField1.getText();
+String lastName = emailSignupTextField2.getText();
+String email = emailSignupTextField.getText();
+String phone = phoneNumberSignupTextfield.getText();
+String password = passSignupTextField.getText();
+String confirm = retypePassSignupTextField.getText();
+
+if (!password.equals(confirm)) {
+    javax.swing.JOptionPane.showMessageDialog(this, "Xác thực mật khẩu không khớp");
+    return;
+}
+
+if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty() || confirm.isEmpty()) {
+    // Hiển thị thông báo yêu cầu điền đủ thông tin
+    javax.swing.JOptionPane.showMessageDialog(this, "Hãy điền đầy đủ thông tin");
+    return;
+}
+
+// Sử dụng try-with-resources để quản lý kết nối CSDL an toàn
+try (Database database = new Database(); 
+     Connection conn = database.getConnection()) {
+
+    // Kiểm tra email đã tồn tại chưa
+    String checkQuery = "SELECT COUNT(*) FROM user WHERE email = ?";
+    try (PreparedStatement checkStmt = conn.prepareStatement(checkQuery)) {
+        checkStmt.setString(1, email);
+        try (ResultSet rs = checkStmt.executeQuery()) {
+            if (rs.next() && rs.getInt(1) > 0) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Email đã tồn tại");
+                return;
+            }
+        }
+    }
+
+    // Nếu email chưa tồn tại, thêm người dùng mới
+    String insertQuery = "INSERT INTO user (firstName, lastName, email, phoneNum, passwrd, typeNum) VALUES (?, ?, ?, ?, ?, ?)";
+    try (PreparedStatement pstmt = conn.prepareStatement(insertQuery)) {
+        pstmt.setString(1, firstName);
+        pstmt.setString(2, lastName);
+        pstmt.setString(3, email);
+        pstmt.setString(4, phone);
+        pstmt.setString(5, password); // Lưu mật khẩu (nên mã hóa trong thực tế)
+        pstmt.setInt(6, 0); // Đặt typeNum mặc định là 0 (user thông thường)
+
+        // Thực thi truy vấn
+        int rowsAffected = pstmt.executeUpdate();
+        
+        if (rowsAffected > 0) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Đăng ký thành công!");
+            UserDashboard UserDashboard = new UserDashboard();
+            UserDashboard.setVisible(true);
+            dispose();
+            
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "Đăng ký thất bại");
+        }
+    }
+
+} catch (SQLException e) {
+    e.printStackTrace();
+    javax.swing.JOptionPane.showMessageDialog(this, "Có lỗi xảy ra: " + e.getMessage());
+}
+
+        
+        
+        
     }//GEN-LAST:event_signUpButtonActionPerformed
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
