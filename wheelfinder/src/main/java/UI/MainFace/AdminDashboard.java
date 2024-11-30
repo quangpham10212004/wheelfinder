@@ -82,7 +82,7 @@ public class AdminDashboard extends javax.swing.JFrame {
         NewNumberAddNewCarTextField1 = new javax.swing.JTextField();
         NewYearAddNewCarTextField1 = new javax.swing.JTextField();
         cancelUpdateCarButton = new javax.swing.JButton();
-        addUpdateCarButton = new javax.swing.JButton();
+        updateUpdateCarButton = new javax.swing.JButton();
         showUserBuyDialog = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
         bigContainer = new jPanelGradient();
@@ -128,7 +128,6 @@ public class AdminDashboard extends javax.swing.JFrame {
         addNewCarDialog.setBackground(new java.awt.Color(255, 255, 255));
         addNewCarDialog.setMinimumSize(new java.awt.Dimension(640, 400));
         addNewCarDialog.setModal(true);
-        addNewCarDialog.setPreferredSize(new java.awt.Dimension(640, 400));
         addNewCarDialog.setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -326,13 +325,13 @@ public class AdminDashboard extends javax.swing.JFrame {
             }
         });
 
-        addUpdateCarButton.setBackground(new java.awt.Color(54, 171, 239));
-        addUpdateCarButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        addUpdateCarButton.setForeground(new java.awt.Color(255, 255, 255));
-        addUpdateCarButton.setText("Add");
-        addUpdateCarButton.addActionListener(new java.awt.event.ActionListener() {
+        updateUpdateCarButton.setBackground(new java.awt.Color(54, 171, 239));
+        updateUpdateCarButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        updateUpdateCarButton.setForeground(new java.awt.Color(255, 255, 255));
+        updateUpdateCarButton.setText("Update");
+        updateUpdateCarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addUpdateCarButtonActionPerformed(evt);
+                updateUpdateCarButtonActionPerformed(evt);
             }
         });
 
@@ -360,7 +359,7 @@ public class AdminDashboard extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                             .addComponent(cancelUpdateCarButton)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(addUpdateCarButton))
+                            .addComponent(updateUpdateCarButton))
                         .addComponent(NewNumberAddNewCarTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(29, 29, 29)
@@ -404,7 +403,7 @@ public class AdminDashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelUpdateCarButton)
-                    .addComponent(addUpdateCarButton))
+                    .addComponent(updateUpdateCarButton))
                 .addGap(30, 30, 30))
         );
 
@@ -421,7 +420,6 @@ public class AdminDashboard extends javax.swing.JFrame {
 
         showUserBuyDialog.setMinimumSize(new java.awt.Dimension(640, 400));
         showUserBuyDialog.setModal(true);
-        showUserBuyDialog.setPreferredSize(new java.awt.Dimension(640, 400));
         showUserBuyDialog.setResizable(false);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -933,10 +931,10 @@ public class AdminDashboard extends javax.swing.JFrame {
         updateCarDialog.setVisible(false);
     }//GEN-LAST:event_cancelUpdateCarButtonActionPerformed
 
-    private void addUpdateCarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addUpdateCarButtonActionPerformed
+    private void updateUpdateCarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateUpdateCarButtonActionPerformed
         // TODO add your handling code here:
         updateCarDialog.setVisible(false);
-    }//GEN-LAST:event_addUpdateCarButtonActionPerformed
+    }//GEN-LAST:event_updateUpdateCarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -989,7 +987,6 @@ public class AdminDashboard extends javax.swing.JFrame {
     private javax.swing.JButton addNewAdminButton;
     private javax.swing.JButton addNewCarButton;
     private javax.swing.JDialog addNewCarDialog;
-    private javax.swing.JButton addUpdateCarButton;
     private javax.swing.JPanel bigContainer;
     private javax.swing.JTextField brandAddNewCarTextField;
     private javax.swing.JButton cancelAddNewCarButton;
@@ -1048,6 +1045,7 @@ public class AdminDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel sideBarLogo;
     private javax.swing.JButton updateCarButton;
     private javax.swing.JDialog updateCarDialog;
+    private javax.swing.JButton updateUpdateCarButton;
     private javax.swing.JLabel userLabel;
     private javax.swing.JTable viewCarTable;
     private javax.swing.JTable viewUserTable;
