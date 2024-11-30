@@ -27,6 +27,7 @@ public class UserDashboard extends javax.swing.JFrame {
     public UserDashboard() {
         initComponents();
         loadCarData();
+        loadBuyData();
     }
     
     class jPanelGradient extends JPanel {
@@ -293,16 +294,22 @@ public class UserDashboard extends javax.swing.JFrame {
         mainContentPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         BuyUserTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
+            new Object [][] {}, // Không cần thêm dữ liệu mặc định tại đây
             new String [] {
-                "ID", "Car", "Time", "Total Fee"
+                "ID", "Car_ID", "Time_Buy", "Total_Fee"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        });
+
+        // Gọi hàm để tải dữ liệu
+        loadBuyData();
         jScrollPane3.setViewportView(BuyUserTable);
 
         javax.swing.GroupLayout mainContentPanel1Layout = new javax.swing.GroupLayout(mainContentPanel1);
@@ -548,6 +555,37 @@ public class UserDashboard extends javax.swing.JFrame {
             row[4] = rs.getInt("yearRelease"); // Chỉnh sửa lại tên cột chính xác
             row[5] = rs.getDouble("price");
             row[6] = rs.getInt("available");
+            tableModel.addRow(row);
+        }
+
+        rs.close();
+        stmt.close();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+        public void loadBuyData() {
+    try (Database db = new Database()) { // Sử dụng try-with-resources để tự động đóng kết nối
+        Connection conn = db.getConnection(); // Lấy kết nối từ class Database
+        if (conn == null) {
+            System.out.println("Không thể kết nối đến cơ sở dữ liệu!");
+            return;
+        }
+        String query = "SELECT id, car_id, timeBuy, totalFee FROM buys";
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(query);
+
+        // Lấy mô hình bảng và xóa dữ liệu cũ
+        DefaultTableModel tableModel = (DefaultTableModel) BuyUserTable.getModel();
+        tableModel.setRowCount(0);
+
+        // Thêm dữ liệu mới vào bảng
+        while (rs.next()) {
+            Object[] row = new Object[4];
+            row[0] = rs.getInt("id");
+            row[1] = rs.getString("car_id");
+            row[2] = rs.getString("timeBuy");
+            row[3] = rs.getInt("totalFee"); // Chỉnh sửa lại tên cột chính xác
             tableModel.addRow(row);
         }
 
