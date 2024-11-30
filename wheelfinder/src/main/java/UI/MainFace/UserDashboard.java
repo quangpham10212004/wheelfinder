@@ -232,9 +232,7 @@ public class UserDashboard extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(viewCarTable);
         if (viewCarTable.getColumnModel().getColumnCount() > 0) {
-            viewCarTable.getColumnModel().getColumn(5).setHeaderValue("Price");
             viewCarTable.getColumnModel().getColumn(6).setResizable(false);
-            viewCarTable.getColumnModel().getColumn(6).setHeaderValue("Current Number");
         }
 
         javax.swing.GroupLayout mainContentPanelLayout = new javax.swing.GroupLayout(mainContentPanel);

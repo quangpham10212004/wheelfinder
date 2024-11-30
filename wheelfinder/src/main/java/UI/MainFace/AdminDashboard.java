@@ -4,11 +4,17 @@
  */
 package main.java.UI.MainFace;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import main.java.Entity.Database;
 
 /**
  *
@@ -21,7 +27,9 @@ public class AdminDashboard extends javax.swing.JFrame {
      */
     public AdminDashboard() {
         initComponents();
+        loadCarData(); // Tải dữ liệu khi khởi tạo giao diện
     }
+
     
     class jPanelGradient extends JPanel {
         protected void paintComponent(Graphics g) {
@@ -586,16 +594,22 @@ public class AdminDashboard extends javax.swing.JFrame {
         mainContentPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         viewCarTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
+            new Object [][] {}, // Không cần thêm dữ liệu mặc định tại đây
             new String [] {
-                "ID", "Brand", "Model", "Colour", "Year of manufacture", "Price", "Current Number"
+                "ID", "Brand", "Model", "Color", "YearRelease", "Price", "Available"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        });
+
+        // Gọi hàm để tải dữ liệu
+        loadCarData();
         jScrollPane1.setViewportView(viewCarTable);
         if (viewCarTable.getColumnModel().getColumnCount() > 0) {
             viewCarTable.getColumnModel().getColumn(5).setHeaderValue("Price");
@@ -969,6 +983,44 @@ public class AdminDashboard extends javax.swing.JFrame {
             }
         });
     }
+    public void loadCarData() {
+    try (Database db = new Database()) { // Sử dụng try-with-resources để tự động đóng kết nối
+        Connection conn = db.getConnection(); // Lấy kết nối từ class Database
+        if (conn == null) {
+            System.out.println("Không thể kết nối đến cơ sở dữ liệu!");
+            return;
+        }
+
+        String query = "SELECT id, brand, model, color, yearRelease, price, available FROM car";
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(query);
+
+        // Lấy mô hình bảng và xóa dữ liệu cũ
+        DefaultTableModel tableModel = (DefaultTableModel) viewCarTable.getModel();
+        tableModel.setRowCount(0);
+
+        // Thêm dữ liệu mới vào bảng
+        while (rs.next()) {
+            Object[] row = new Object[7];
+            row[0] = rs.getInt("id");
+            row[1] = rs.getString("brand");
+            row[2] = rs.getString("model");
+            row[3] = rs.getString("color");
+            row[4] = rs.getInt("yearRelease"); // Chỉnh sửa lại tên cột chính xác
+            row[5] = rs.getDouble("price");
+            row[6] = rs.getInt("available");
+            tableModel.addRow(row);
+        }
+
+        rs.close();
+        stmt.close();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
+
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CarAdminPanel;
