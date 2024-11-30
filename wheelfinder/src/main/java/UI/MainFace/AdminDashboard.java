@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package main.java.UI.MainFace;
 
 import java.sql.Connection;
@@ -15,6 +11,7 @@ import java.awt.Graphics2D;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import main.java.Entity.Database;
+import main.java.UI.AddNewCar;
 
 /**
  *
@@ -28,6 +25,7 @@ public class AdminDashboard extends javax.swing.JFrame {
     public AdminDashboard() {
         initComponents();
         loadCarData(); // Tải dữ liệu khi khởi tạo giao diện
+        loadUserData();
     }
 
     
@@ -611,18 +609,14 @@ public class AdminDashboard extends javax.swing.JFrame {
         // Gọi hàm để tải dữ liệu
         loadCarData();
         jScrollPane1.setViewportView(viewCarTable);
-        if (viewCarTable.getColumnModel().getColumnCount() > 0) {
-            viewCarTable.getColumnModel().getColumn(5).setHeaderValue("Price");
-            viewCarTable.getColumnModel().getColumn(6).setResizable(false);
-            viewCarTable.getColumnModel().getColumn(6).setHeaderValue("Current Number");
-        }
 
         javax.swing.GroupLayout mainContentPanelLayout = new javax.swing.GroupLayout(mainContentPanel);
         mainContentPanel.setLayout(mainContentPanelLayout);
         mainContentPanelLayout.setHorizontalGroup(
             mainContentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainContentPanelLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
                 .addContainerGap())
         );
         mainContentPanelLayout.setVerticalGroup(
@@ -688,16 +682,24 @@ public class AdminDashboard extends javax.swing.JFrame {
         mainContentPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         viewUserTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
+            new Object [][] {}, // Không cần thêm dữ liệu mặc định tại đây
             new String [] {
-                "First Name", "Last Name", "Email", "Phone Number", "Password"
+                "ID", "FirstName", "LastName", "Email", "PhoneNum"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        });
+
+        // Gọi hàm để tải dữ liệu
+        loadUserData(
+
+        );
         jScrollPane2.setViewportView(viewUserTable);
 
         javax.swing.GroupLayout mainContentPanel1Layout = new javax.swing.GroupLayout(mainContentPanel1);
@@ -932,7 +934,8 @@ public class AdminDashboard extends javax.swing.JFrame {
 
     private void addNewCarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addNewCarButtonActionPerformed
         // TODO add your handling code here:
-        addNewCarDialog.setVisible(true);
+        AddNewCar AddNewCar = new AddNewCar();
+        AddNewCar.setVisible(true);
     }//GEN-LAST:event_addNewCarButtonActionPerformed
 
     private void newIdAddNewCarTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newIdAddNewCarTextField1ActionPerformed
@@ -1018,7 +1021,40 @@ public class AdminDashboard extends javax.swing.JFrame {
         e.printStackTrace();
     }
 }
+public void loadUserData() {
+    try (Database db = new Database()) { // Sử dụng try-with-resources để tự động đóng kết nối
+        Connection conn = db.getConnection(); // Lấy kết nối từ class Database
+        if (conn == null) {
+            System.out.println("Không thể kết nối đến cơ sở dữ liệu!");
+            return;
+        }
 
+        String query = "SELECT id, firstName, lastName, email, phoneNum FROM user"; // Truy vấn để lấy dữ liệu người dùng
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(query);
+
+        // Lấy mô hình bảng và xóa dữ liệu cũ
+        DefaultTableModel tableModel = (DefaultTableModel) viewUserTable.getModel();
+        tableModel.setRowCount(0);
+
+        // Thêm dữ liệu mới vào bảng
+        while (rs.next()) {
+            Object[] row = new Object[5]; // Cột tương ứng với 7 trường trong bảng người dùng
+            row[0] = rs.getInt("id");
+            row[1] = rs.getString("firstName");
+            row[2] = rs.getString("lastName");
+            row[3] = rs.getString("email");
+            row[4] = rs.getString("phoneNum");
+            tableModel.addRow(row);
+        }
+
+        rs.close();
+        stmt.close();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
+}
 
 
 

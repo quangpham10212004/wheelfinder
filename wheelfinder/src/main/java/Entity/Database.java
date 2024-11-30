@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 public class Database implements AutoCloseable {  // Implement AutoCloseable
 
     private String user = "root";
-    private String password = "Quang@2004";
+    private String password = "16092004";
     private String url = "jdbc:mysql://localhost:3306/wheelfinder";
     private Connection connection;  // Thêm đối tượng Connection
     private Statement statement;
