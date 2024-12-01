@@ -14,12 +14,12 @@ import javax.swing.JPanel;
  *
  * @author admin
  */
-public class ShowAllUserGUI extends javax.swing.JFrame {
+public class ViewAllUserGUI extends javax.swing.JFrame {
 
     /**
      * Creates new form AddNewAdminGUI
      */
-    public ShowAllUserGUI() {
+    public ViewAllUserGUI() {
         initComponents();
     }
     
@@ -50,7 +50,7 @@ public class ShowAllUserGUI extends javax.swing.JFrame {
         AllUserTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Add New Admin");
+        setTitle("All Users");
         setMinimumSize(new java.awt.Dimension(640, 400));
         setResizable(false);
 
@@ -118,21 +118,23 @@ public class ShowAllUserGUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ShowAllUserGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewAllUserGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ShowAllUserGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewAllUserGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ShowAllUserGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewAllUserGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ShowAllUserGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewAllUserGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ShowAllUserGUI().setVisible(true);
+                new ViewAllUserGUI().setVisible(true);
             }
         });
     }
