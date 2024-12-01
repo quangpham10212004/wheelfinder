@@ -46,7 +46,7 @@ public class UpdateCarGUI extends javax.swing.JFrame {
         idUpdateCarTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Add New Car");
+        setTitle("Update Car");
         setMinimumSize(new java.awt.Dimension(640, 400));
         setName("addNewCarFrame"); // NOI18N
         setResizable(false);

@@ -34,7 +34,7 @@ public class DeleteUserGUI extends javax.swing.JFrame {
         cancelButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Delete Car");
+        setTitle("Delete User");
         setMinimumSize(new java.awt.Dimension(320, 200));
         setResizable(false);
 
