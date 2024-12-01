@@ -9,14 +9,18 @@ import java.sql.ResultSet;
 public class Database implements AutoCloseable {  // Implement AutoCloseable
 
     private String user = "root";
+<<<<<<< HEAD
     private String password = "13012004";
+=======
+    private String password = "Quang@2004";
+>>>>>>> 3e86ef307c378abb54a952c9becffb9df942f93d
     private String url = "jdbc:mysql://localhost:3306/wheelfinder";
+
     private Connection connection;  // Thêm đối tượng Connection
     private Statement statement;
 
     public Database() {
         try {
-            // Kết nối tới cơ sở dữ liệu
             connection = DriverManager.getConnection(url, user, password);
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
@@ -26,16 +30,16 @@ public class Database implements AutoCloseable {  // Implement AutoCloseable
         }
     }
 
-    public Connection getConnection(){
+    public Connection getConnection() {
         return connection;
     }
+
     public Statement getStatement() {
         return statement;
     }
 
     @Override
     public void close() throws SQLException {
-        // Đảm bảo đóng kết nối và statement khi không sử dụng nữa
         if (statement != null && !statement.isClosed()) {
             statement.close();
         }
