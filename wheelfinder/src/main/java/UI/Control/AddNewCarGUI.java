@@ -4,15 +4,22 @@
  */
 package main.java.UI.Control;
 
+import java.sql.SQLException;
+import java.util.Scanner;
+import main.java.Entity.Database;
+import main.java.Entity.Operation;
+import main.java.Entity.User;
+
 /**
  *
  * @author admin
  */
-public class AddNewCarGUI extends javax.swing.JFrame {
+public class AddNewCarGUI extends javax.swing.JFrame  {
 
     /**
      * Creates new form AddNewCar
      */
+     
     public AddNewCarGUI() {
         initComponents();
     }
@@ -34,14 +41,14 @@ public class AddNewCarGUI extends javax.swing.JFrame {
         yearLabel = new javax.swing.JLabel();
         priceLabel = new javax.swing.JLabel();
         numberLabel = new javax.swing.JLabel();
-        brandAddNewCarTextField = new javax.swing.JTextField();
-        colourAddNewCarTextField = new javax.swing.JTextField();
-        modelAddNewCarTextField = new javax.swing.JTextField();
-        priceAddNewCarTextField = new javax.swing.JTextField();
-        numberAddNewCarTextField = new javax.swing.JTextField();
-        yearAddNewCarTextField = new javax.swing.JTextField();
+        brandName = new javax.swing.JTextField();
+        color = new javax.swing.JTextField();
+        model = new javax.swing.JTextField();
+        price = new javax.swing.JTextField();
+        currentNumber = new javax.swing.JTextField();
+        yearRelease = new javax.swing.JTextField();
         cancelButton = new javax.swing.JButton();
-        addAddNewCarButton = new javax.swing.JButton();
+        addButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Add New Car");
@@ -75,9 +82,15 @@ public class AddNewCarGUI extends javax.swing.JFrame {
         numberLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         numberLabel.setText("Current Number");
 
-        brandAddNewCarTextField.addActionListener(new java.awt.event.ActionListener() {
+        brandName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                brandAddNewCarTextFieldActionPerformed(evt);
+                brandNameActionPerformed(evt);
+            }
+        });
+
+        model.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modelActionPerformed(evt);
             }
         });
 
@@ -91,13 +104,13 @@ public class AddNewCarGUI extends javax.swing.JFrame {
             }
         });
 
-        addAddNewCarButton.setBackground(new java.awt.Color(54, 171, 239));
-        addAddNewCarButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        addAddNewCarButton.setForeground(new java.awt.Color(255, 255, 255));
-        addAddNewCarButton.setText("Add");
-        addAddNewCarButton.addActionListener(new java.awt.event.ActionListener() {
+        addButton.setBackground(new java.awt.Color(54, 171, 239));
+        addButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        addButton.setForeground(new java.awt.Color(255, 255, 255));
+        addButton.setText("Add");
+        addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addAddNewCarButtonActionPerformed(evt);
+                addButtonActionPerformed(evt);
             }
         });
 
@@ -116,11 +129,11 @@ public class AddNewCarGUI extends javax.swing.JFrame {
                             .addGroup(containerLayout.createSequentialGroup()
                                 .addComponent(brandNameLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(brandAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(brandName, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, containerLayout.createSequentialGroup()
                                 .addComponent(modelLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(modelAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(model, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(containerLayout.createSequentialGroup()
                                 .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(colourLabel)
@@ -129,15 +142,15 @@ public class AddNewCarGUI extends javax.swing.JFrame {
                                     .addComponent(numberLabel))
                                 .addGap(85, 85, 85)
                                 .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(colourAddNewCarTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(yearAddNewCarTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(priceAddNewCarTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(color, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(yearRelease, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(price, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, containerLayout.createSequentialGroup()
                                             .addComponent(cancelButton)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(addAddNewCarButton))
-                                        .addComponent(numberAddNewCarTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                            .addComponent(addButton))
+                                        .addComponent(currentNumber, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap(73, Short.MAX_VALUE))
         );
         containerLayout.setVerticalGroup(
@@ -147,32 +160,32 @@ public class AddNewCarGUI extends javax.swing.JFrame {
                 .addComponent(jLabel10)
                 .addGap(18, 18, 18)
                 .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(brandAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(brandName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(brandNameLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(modelAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(model, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(modelLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(colourLabel)
-                    .addComponent(colourAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(color, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(yearLabel)
-                    .addComponent(yearAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(yearLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(yearRelease, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(priceLabel)
-                    .addComponent(priceAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(numberLabel)
-                    .addComponent(numberAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(currentNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelButton)
-                    .addComponent(addAddNewCarButton))
+                    .addComponent(addButton))
                 .addContainerGap(86, Short.MAX_VALUE))
         );
 
@@ -201,17 +214,37 @@ public class AddNewCarGUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addAddNewCarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAddNewCarButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addAddNewCarButtonActionPerformed
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+        Database database = new Database();
+        String brandname = brandName.getText();
+        String modell = model.getText();
+        String colour = color.getText();
+        String yearrelease = yearRelease.getText();
+        double Price = Double.parseDouble(price.getText());
+        int curNum = Integer.parseInt(currentNumber.getText());
+        try {
+            String insert = "insert into car(brand, model, color, yearRelease, price, available)\n" + //
+                                "values "+"('"+brandname+"','"+modell+"','"+colour+"','"+yearrelease+"','"+Price+"','"+curNum+"')";
+            database.getStatement().execute(insert);
+            System.out.println("Car Added To System!");                                   
+        } catch (SQLException e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
+        dispose();
+    }//GEN-LAST:event_addButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cancelButtonActionPerformed
 
-    private void brandAddNewCarTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brandAddNewCarTextFieldActionPerformed
+    private void brandNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brandNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_brandAddNewCarTextFieldActionPerformed
+    }//GEN-LAST:event_brandNameActionPerformed
+
+    private void modelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -250,21 +283,21 @@ public class AddNewCarGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addAddNewCarButton;
-    private javax.swing.JTextField brandAddNewCarTextField;
+    private javax.swing.JButton addButton;
+    private javax.swing.JTextField brandName;
     private javax.swing.JLabel brandNameLabel;
     private javax.swing.JButton cancelButton;
-    private javax.swing.JTextField colourAddNewCarTextField;
+    private javax.swing.JTextField color;
     private javax.swing.JLabel colourLabel;
     private javax.swing.JPanel container;
+    private javax.swing.JTextField currentNumber;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JTextField modelAddNewCarTextField;
+    private javax.swing.JTextField model;
     private javax.swing.JLabel modelLabel;
-    private javax.swing.JTextField numberAddNewCarTextField;
     private javax.swing.JLabel numberLabel;
-    private javax.swing.JTextField priceAddNewCarTextField;
+    private javax.swing.JTextField price;
     private javax.swing.JLabel priceLabel;
-    private javax.swing.JTextField yearAddNewCarTextField;
     private javax.swing.JLabel yearLabel;
+    private javax.swing.JTextField yearRelease;
     // End of variables declaration//GEN-END:variables
 }
