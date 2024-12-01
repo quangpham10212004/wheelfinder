@@ -187,7 +187,7 @@ public class UserFace extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Brand", "Model", "Colour", "Year Realease", "Price", "Aivailable"
+                "ID", "Brand", "Model", "Colour", "Year Realease", "Price", "Current Number"
             }
         ));
         jScrollPane3.setViewportView(carTable);
@@ -292,7 +292,7 @@ public class UserFace extends javax.swing.JFrame {
         ResultSet rs = stmt.executeQuery(query);
 
         // Lấy mô hình bảng và xóa dữ liệu cũ
-        DefaultTableModel tableModel = (DefaultTableModel) viewCarTable.getModel();
+        DefaultTableModel tableModel = (DefaultTableModel) carTable.getModel();
         tableModel.setRowCount(0);
 
         // Thêm dữ liệu mới vào bảng

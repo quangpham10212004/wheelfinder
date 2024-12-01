@@ -25,7 +25,7 @@ public class AdminFace extends javax.swing.JFrame {
     public AdminFace() {
         initComponents();
         loadCarData(); // Tải dữ liệu khi khởi tạo giao diện
-        loadUserData();
+        
     }
 
     
@@ -774,7 +774,7 @@ public class AdminFace extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Brand", "Model", "Colour", "Year Realease", "Price", "Aivailable"
+                "ID", "Brand", "Model", "Colour", "Year Realease", "Price", "Current Number"
             }
         ));
         jScrollPane3.setViewportView(carTable);
@@ -942,12 +942,13 @@ public class AdminFace extends javax.swing.JFrame {
             return;
         }
 
-        String query = "SELECT id, brand, model, color, yearRelease, price, available FROM car";
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(query);
+        String query = "SELECT * FROM car";
+        
+        ResultSet rs = db.getStatement().executeQuery(query);
 
         // Lấy mô hình bảng và xóa dữ liệu cũ
-        DefaultTableModel tableModel = (DefaultTableModel) viewCarTable.getModel();
+        
+        DefaultTableModel tableModel = (DefaultTableModel) carTable.getModel();
         tableModel.setRowCount(0);
 
         // Thêm dữ liệu mới vào bảng
@@ -964,7 +965,7 @@ public class AdminFace extends javax.swing.JFrame {
         }
 
         rs.close();
-        stmt.close();
+        
     } catch (Exception e) {
         e.printStackTrace();
     }
@@ -982,7 +983,7 @@ public void loadUserData() {
         ResultSet rs = stmt.executeQuery(query);
 
         // Lấy mô hình bảng và xóa dữ liệu cũ
-        DefaultTableModel tableModel = (DefaultTableModel) viewUserTable.getModel();
+        DefaultTableModel tableModel = (DefaultTableModel) userTable.getModel();
         tableModel.setRowCount(0);
 
         // Thêm dữ liệu mới vào bảng

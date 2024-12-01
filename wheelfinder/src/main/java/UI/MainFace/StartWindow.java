@@ -691,11 +691,11 @@ public class StartWindow extends javax.swing.JFrame {
 
                 // Mở màn hình Admin hoặc User tùy vào loại người dùng
                     if (type == 1) { // Nếu là Admin
-                        AdminDashboard adminDashboard = new AdminDashboard();
-                        adminDashboard.setVisible(true);
+                        AdminFace adminFace = new AdminFace();
+                        adminFace.setVisible(true);
                     } else { // Nếu là User
-                        UserDashboard userDashboard = new UserDashboard();
-                        userDashboard.setVisible(true);
+                        UserFace userFace = new UserFace();
+                        userFace.setVisible(true);
                 }
 
                 // Đóng cửa sổ hiện tại (login form)
@@ -849,6 +849,7 @@ try (Database database = new Database();
         //</editor-fold>
 
         /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 StartWindow l = new StartWindow();
