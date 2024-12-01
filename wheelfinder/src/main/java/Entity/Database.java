@@ -1,46 +1,38 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package main.java.Entity;
 
+import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class Database implements AutoCloseable {  // Implement AutoCloseable
-
+/**
+ *
+ * @author Quang
+ */
+public class Database {
     private String user = "root";
-    private String password = "16092004";
-    private String url = "jdbc:mysql://localhost:3306/wheelfinder";
-    private Connection connection;  // Thêm đối tượng Connection
-    private Statement statement;
-
-    public Database() {
+    private String password = "Quang@2004";
+    private String url = "jdbc:mysql://localhost/wheelfinder";
+    private Statement statement ;
+    public Database(){
         try {
-            // Kết nối tới cơ sở dữ liệu
-            connection = DriverManager.getConnection(url, user, password);
+            Connection connection = DriverManager.getConnection(url, user, password);
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_READ_ONLY);
-            // System.out.println("Connected successfully"); // kiểm tra kết nối
+            ResultSet.CONCUR_READ_ONLY);
+            // System.out.println("Connected successfully"); // kiem tra ket noi
+            
         } catch (SQLException e) {
+            // TODO: handle exception
             e.printStackTrace();
+            // System.out.println("Nothing happen!");
         }
     }
-
-    public Connection getConnection(){
-        return connection;
-    }
-    public Statement getStatement() {
+    public Statement getStatement(){
         return statement;
-    }
-
-    @Override
-    public void close() throws SQLException {
-        // Đảm bảo đóng kết nối và statement khi không sử dụng nữa
-        if (statement != null && !statement.isClosed()) {
-            statement.close();
-        }
-        if (connection != null && !connection.isClosed()) {
-            connection.close();
-        }
     }
 }
