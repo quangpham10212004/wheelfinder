@@ -628,7 +628,7 @@ public class AdminFace extends javax.swing.JFrame {
         deleteCarButton.setBackground(new java.awt.Color(54, 171, 239));
         deleteCarButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         deleteCarButton.setForeground(new java.awt.Color(255, 255, 255));
-        deleteCarButton.setText("Delete New Car");
+        deleteCarButton.setText("Delete Car");
         deleteCarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteCarButtonActionPerformed(evt);
