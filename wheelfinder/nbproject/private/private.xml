@@ -12,7 +12,24 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+ HEAD
             <file>file:/E:/Code/Java%20Project/wheelfinder/wheelfinder/src/main/java/UI/MainFace/AdminFace.java</file>
+
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/Entity/Client.java</file>
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/Interact/ViewCar.java</file>
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/UI/ClientFace.java</file>
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/Interact/UpdateCar.java</file>
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/Main/Main.java</file>
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/UI/CarGallery.java</file>
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/Interact/AddNewCar.java</file>
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/UI/MainFace/StartWindow.java</file>
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/UI/AddNewCar.java</file>
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/Entity/Admin.java</file>
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/UI/AdminFace.java</file>
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/UI/MainFace/AdminDashboard.java</file>
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/Interact/DeleteUser.java</file>
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/Interact/DeleteCar.java</file>
+ b5f582e80aeeb85130ef95e9790b7e97e3fbb58f
         </group>
     </open-files>
 </project-private>
