@@ -59,12 +59,12 @@
                       <Group type="102" attributes="0">
                           <Component id="cancelButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="delCarButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="delButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="idLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                          <Component id="carIdDeleteTextField" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Component id="carID" min="-2" pref="100" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
@@ -84,11 +84,11 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="idLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="carIdDeleteTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="carID" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="delCarButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="delButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cancelButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="71" max="32767" attributes="0"/>
@@ -117,12 +117,12 @@
             <Property name="text" type="java.lang.String" value="Car&apos;s ID"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="carIdDeleteTextField">
+        <Component class="javax.swing.JTextField" name="carID">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="carIdDeleteTextFieldActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="carIDActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="delCarButton">
+        <Component class="javax.swing.JButton" name="delButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ef" green="ab" red="36" type="rgb"/>
@@ -136,7 +136,7 @@
             <Property name="text" type="java.lang.String" value="Delete"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delCarButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delButtonActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="cancelButton">

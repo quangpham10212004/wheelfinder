@@ -4,18 +4,30 @@
  */
 package main.java.UI.Control;
 
+import java.sql.SQLException;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+import main.java.Entity.Database;
+import main.java.Entity.Operation;
+import main.java.Entity.User;
+import main.java.Interact.ViewCar;
+
 /**
  *
  * @author admin
  */
-public class DeleteCarGUI extends javax.swing.JFrame {
+public class DeleteCarGUI extends javax.swing.JFrame implements Operation {
 
     /**
      * Creates new form DeleteCarGUI
      */
-    public DeleteCarGUI() {
-        initComponents();
-    }
+    public DeleteCarGUI(Database database, Scanner sc, User user) {
+    this.database = database;
+    this.sc = sc;
+    this.user = user;
+    initComponents();
+}
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -29,8 +41,8 @@ public class DeleteCarGUI extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         idLabel = new javax.swing.JLabel();
-        carIdDeleteTextField = new javax.swing.JTextField();
-        delCarButton = new javax.swing.JButton();
+        carID = new javax.swing.JTextField();
+        delButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,19 +61,19 @@ public class DeleteCarGUI extends javax.swing.JFrame {
         idLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         idLabel.setText("Car's ID");
 
-        carIdDeleteTextField.addActionListener(new java.awt.event.ActionListener() {
+        carID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                carIdDeleteTextFieldActionPerformed(evt);
+                carIDActionPerformed(evt);
             }
         });
 
-        delCarButton.setBackground(new java.awt.Color(54, 171, 239));
-        delCarButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        delCarButton.setForeground(new java.awt.Color(255, 255, 255));
-        delCarButton.setText("Delete");
-        delCarButton.addActionListener(new java.awt.event.ActionListener() {
+        delButton.setBackground(new java.awt.Color(54, 171, 239));
+        delButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        delButton.setForeground(new java.awt.Color(255, 255, 255));
+        delButton.setText("Delete");
+        delButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                delCarButtonActionPerformed(evt);
+                delButtonActionPerformed(evt);
             }
         });
 
@@ -84,11 +96,11 @@ public class DeleteCarGUI extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(cancelButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(delCarButton))
+                        .addComponent(delButton))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(idLabel)
                         .addGap(34, 34, 34)
-                        .addComponent(carIdDeleteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(carID, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(64, 64, 64))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(93, 93, 93)
@@ -103,10 +115,10 @@ public class DeleteCarGUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(idLabel)
-                    .addComponent(carIdDeleteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(carID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(delCarButton)
+                    .addComponent(delButton)
                     .addComponent(cancelButton))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
@@ -126,59 +138,44 @@ public class DeleteCarGUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void carIdDeleteTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carIdDeleteTextFieldActionPerformed
+    private void carIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_carIdDeleteTextFieldActionPerformed
+    }//GEN-LAST:event_carIDActionPerformed
 
-    private void delCarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delCarButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_delCarButtonActionPerformed
+    private void delButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delButtonActionPerformed
+        int id = Integer.parseInt(carID.getText());
+        
+        try {
+            String update = "delete from car where ID = '"+id+"'";
+            database.getStatement().execute(update);
+            JOptionPane.showMessageDialog(this, "Delete Successfully", "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (SQLException e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
+        dispose();
+    }//GEN-LAST:event_delButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_cancelButtonActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DeleteCarGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DeleteCarGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DeleteCarGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DeleteCarGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new DeleteCarGUI().setVisible(true);
-            }
-        });
-    }
+ private Database database;
+    private Scanner sc;
+    private User user;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelButton;
-    private javax.swing.JTextField carIdDeleteTextField;
-    private javax.swing.JButton delCarButton;
+    private javax.swing.JTextField carID;
+    private javax.swing.JButton delButton;
     private javax.swing.JLabel idLabel;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+    public void operation(Database database, Scanner sc, User user) {
+        java.awt.EventQueue.invokeLater(() -> {
+            DeleteCarGUI frame = new DeleteCarGUI(database, sc, user);
+            frame.setVisible(true);
+        });
+    }
+
 }

@@ -12,19 +12,14 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/Entity/Client.java</file>
-            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/Interact/ViewCar.java</file>
-            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/UI/ClientFace.java</file>
-            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/Interact/UpdateCar.java</file>
-            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/Main/Main.java</file>
-            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/UI/CarGallery.java</file>
-            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/Interact/AddNewCar.java</file>
-            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/UI/MainFace/StartWindow.java</file>
-            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/UI/AddNewCar.java</file>
-            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/Entity/Admin.java</file>
-            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/UI/AdminFace.java</file>
-            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/UI/MainFace/AdminDashboard.java</file>
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/UI/MainFace/AdminFace.java</file>
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/UI/Control/DeleteCarGUI.java</file>
             <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/Interact/DeleteUser.java</file>
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/UI/Control/AddNewCarGUI.java</file>
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/UI/MainFace/StartWindow.java</file>
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/UI/MainFace/AdminDashboard.java</file>
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/Entity/Admin.java</file>
+            <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/UI/Control/DeleteUserGUI.java</file>
             <file>file:/C:/Users/Quang/Desktop/wheelfinder/wheelfinder/src/main/java/Interact/DeleteCar.java</file>
         </group>
     </open-files>
