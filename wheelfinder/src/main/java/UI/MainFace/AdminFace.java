@@ -8,11 +8,24 @@ import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.util.Scanner;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import main.java.Entity.Database;
+import main.java.Entity.Operation;
+import main.java.Entity.User;
+import main.java.Interact.AddNewAccount;
+import main.java.Interact.ChangePassword;
+import main.java.Interact.DeleteCar;
+import main.java.Interact.DeleteUser;
+import main.java.Interact.Quit;
+import main.java.Interact.ShowUserBuys;
+import main.java.Interact.UpdateCar;
+import main.java.Interact.ViewAllUser;
+import main.java.Interact.ViewCar;
 import main.java.UI.AddNewCar;
 import main.java.UI.Control.AddNewCarGUI;
+import main.java.UI.Control.DeleteCarGUI;
 
 /**
  *
@@ -23,10 +36,18 @@ public class AdminFace extends javax.swing.JFrame {
     /**
      * Creates new form AdminDashboard
      */
-    public AdminFace() {
+    private Database database;
+    private Scanner sc;
+    private User user;
+
+    // Constructor nhận các tham số cần thiết
+    public AdminFace(Database database, Scanner sc, User user) {
+        this.database = database;
+        this.sc = sc;
+        this.user = user;
         initComponents();
-        loadCarData(); // Tải dữ liệu khi khởi tạo giao diện
-        
+    }
+    public AdminFace(){
     }
     
     class jPanelGradient extends JPanel {
@@ -42,17 +63,17 @@ public class AdminFace extends javax.swing.JFrame {
         }
     }
 
-    
     class jPanelGradient extends JPanel {
+
         protected void paintComponent(Graphics g) {
-        Graphics2D g2d = (Graphics2D) g;
-        Color color1 = new Color(100,57,255);
-        Color color2 = new Color(124,245,255);
-        int width = getWidth();
-        int height = getHeight();
-        GradientPaint gradientPaint = new GradientPaint(0, 0, color1, 0 , height, color2);
-        g2d.setPaint(gradientPaint);
-        g2d.fillRect(0, 0, width, height);
+            Graphics2D g2d = (Graphics2D) g;
+            Color color1 = new Color(100, 57, 255);
+            Color color2 = new Color(124, 245, 255);
+            int width = getWidth();
+            int height = getHeight();
+            GradientPaint gradientPaint = new GradientPaint(0, 0, color1, 0, height, color2);
+            g2d.setPaint(gradientPaint);
+            g2d.fillRect(0, 0, width, height);
         }
     }
 
@@ -886,7 +907,8 @@ public class AdminFace extends javax.swing.JFrame {
     }//GEN-LAST:event_updateNewCarButtonActionPerformed
 
     private void deleteCarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCarButtonActionPerformed
-        // TODO add your handling code here:
+        DeleteCarGUI deletecar = new DeleteCarGUI(database, sc, user);
+        deletecar.setVisible(true);
     }//GEN-LAST:event_deleteCarButtonActionPerformed
 
     private void addNewAdminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addNewAdminButtonActionPerformed
@@ -917,6 +939,7 @@ public class AdminFace extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        Database database = new Database();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -948,77 +971,77 @@ public class AdminFace extends javax.swing.JFrame {
             }
         });
     }
+
     public void loadCarData() {
-    try (Database db = new Database()) { // Sử dụng try-with-resources để tự động đóng kết nối
-        Connection conn = db.getConnection(); // Lấy kết nối từ class Database
-        if (conn == null) {
-            System.out.println("Không thể kết nối đến cơ sở dữ liệu!");
-            return;
+        try (Database db = new Database()) { // Sử dụng try-with-resources để tự động đóng kết nối
+            Connection conn = db.getConnection(); // Lấy kết nối từ class Database
+            if (conn == null) {
+                System.out.println("Không thể kết nối đến cơ sở dữ liệu!");
+                return;
+            }
+
+            String query = "SELECT * FROM car";
+
+            ResultSet rs = db.getStatement().executeQuery(query);
+
+            // Lấy mô hình bảng và xóa dữ liệu cũ
+            DefaultTableModel tableModel = (DefaultTableModel) carTable.getModel();
+            tableModel.setRowCount(0);
+
+            // Thêm dữ liệu mới vào bảng
+            while (rs.next()) {
+                Object[] row = new Object[7];
+                row[0] = rs.getInt("id");
+                row[1] = rs.getString("brand");
+                row[2] = rs.getString("model");
+                row[3] = rs.getString("color");
+                row[4] = rs.getInt("yearRelease"); // Chỉnh sửa lại tên cột chính xác
+                row[5] = rs.getDouble("price");
+                row[6] = rs.getInt("available");
+                tableModel.addRow(row);
+            }
+
+            rs.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-        String query = "SELECT * FROM car";
-        
-        ResultSet rs = db.getStatement().executeQuery(query);
-
-        // Lấy mô hình bảng và xóa dữ liệu cũ
-        
-        DefaultTableModel tableModel = (DefaultTableModel) carTable.getModel();
-        tableModel.setRowCount(0);
-
-        // Thêm dữ liệu mới vào bảng
-        while (rs.next()) {
-            Object[] row = new Object[7];
-            row[0] = rs.getInt("id");
-            row[1] = rs.getString("brand");
-            row[2] = rs.getString("model");
-            row[3] = rs.getString("color");
-            row[4] = rs.getInt("yearRelease"); // Chỉnh sửa lại tên cột chính xác
-            row[5] = rs.getDouble("price");
-            row[6] = rs.getInt("available");
-            tableModel.addRow(row);
-        }
-
-        rs.close();
-        
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-}
-public void loadUserData() {
-    try (Database db = new Database()) { // Sử dụng try-with-resources để tự động đóng kết nối
-        Connection conn = db.getConnection(); // Lấy kết nối từ class Database
-        if (conn == null) {
-            System.out.println("Không thể kết nối đến cơ sở dữ liệu!");
-            return;
-        }
-
-        String query = "SELECT id, firstName, lastName, email, phoneNum FROM user"; // Truy vấn để lấy dữ liệu người dùng
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(query);
-
-        // Lấy mô hình bảng và xóa dữ liệu cũ
-        DefaultTableModel tableModel = (DefaultTableModel) userTable.getModel();
-        tableModel.setRowCount(0);
-
-        // Thêm dữ liệu mới vào bảng
-        while (rs.next()) {
-            Object[] row = new Object[5]; // Cột tương ứng với 7 trường trong bảng người dùng
-            row[0] = rs.getInt("id");
-            row[1] = rs.getString("firstName");
-            row[2] = rs.getString("lastName");
-            row[3] = rs.getString("email");
-            row[4] = rs.getString("phoneNum");
-            tableModel.addRow(row);
-        }
-
-        rs.close();
-        stmt.close();
-    } catch (Exception e) {
-        e.printStackTrace();
     }
 
-}
+    public void loadUserData() {
+        try (Database db = new Database()) { // Sử dụng try-with-resources để tự động đóng kết nối
+            Connection conn = db.getConnection(); // Lấy kết nối từ class Database
+            if (conn == null) {
+                System.out.println("Không thể kết nối đến cơ sở dữ liệu!");
+                return;
+            }
 
+            String query = "SELECT id, firstName, lastName, email, phoneNum FROM user"; // Truy vấn để lấy dữ liệu người dùng
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+
+            // Lấy mô hình bảng và xóa dữ liệu cũ
+            DefaultTableModel tableModel = (DefaultTableModel) userTable.getModel();
+            tableModel.setRowCount(0);
+
+            // Thêm dữ liệu mới vào bảng
+            while (rs.next()) {
+                Object[] row = new Object[5]; // Cột tương ứng với 7 trường trong bảng người dùng
+                row[0] = rs.getInt("id");
+                row[1] = rs.getString("firstName");
+                row[2] = rs.getString("lastName");
+                row[3] = rs.getString("email");
+                row[4] = rs.getString("phoneNum");
+                tableModel.addRow(row);
+            }
+
+            rs.close();
+            stmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
