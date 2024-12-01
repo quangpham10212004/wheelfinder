@@ -80,12 +80,12 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="brandNameLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="brandAddNewCarTextField" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="brandName" min="-2" pref="300" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="modelLabel" min="-2" pref="51" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="modelAddNewCarTextField" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="model" min="-2" pref="300" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -96,16 +96,16 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="colourAddNewCarTextField" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
-                                      <Component id="yearAddNewCarTextField" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
-                                      <Component id="priceAddNewCarTextField" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
+                                      <Component id="color" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
+                                      <Component id="yearRelease" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
+                                      <Component id="price" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
                                       <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="cancelButton" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="addAddNewCarButton" min="-2" max="-2" attributes="0"/>
+                                              <Component id="addButton" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="numberAddNewCarTextField" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
+                                          <Component id="currentNumber" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -123,38 +123,38 @@
                   <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="brandAddNewCarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="brandName" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="brandNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="modelAddNewCarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="model" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="modelLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="colourLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="colourAddNewCarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="color" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="yearLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="yearAddNewCarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="yearRelease" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="priceLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="priceAddNewCarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="price" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="numberLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="numberAddNewCarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="currentNumber" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="cancelButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="addAddNewCarButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="addButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="86" max="32767" attributes="0"/>
               </Group>
@@ -222,20 +222,23 @@
             <Property name="text" type="java.lang.String" value="Current Number"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="brandAddNewCarTextField">
+        <Component class="javax.swing.JTextField" name="brandName">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="brandAddNewCarTextFieldActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="brandNameActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="colourAddNewCarTextField">
+        <Component class="javax.swing.JTextField" name="color">
         </Component>
-        <Component class="javax.swing.JTextField" name="modelAddNewCarTextField">
+        <Component class="javax.swing.JTextField" name="model">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modelActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="priceAddNewCarTextField">
+        <Component class="javax.swing.JTextField" name="price">
         </Component>
-        <Component class="javax.swing.JTextField" name="numberAddNewCarTextField">
+        <Component class="javax.swing.JTextField" name="currentNumber">
         </Component>
-        <Component class="javax.swing.JTextField" name="yearAddNewCarTextField">
+        <Component class="javax.swing.JTextField" name="yearRelease">
         </Component>
         <Component class="javax.swing.JButton" name="cancelButton">
           <Properties>
@@ -254,7 +257,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="addAddNewCarButton">
+        <Component class="javax.swing.JButton" name="addButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ef" green="ab" red="36" type="rgb"/>
@@ -268,7 +271,7 @@
             <Property name="text" type="java.lang.String" value="Add"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addAddNewCarButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addButtonActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

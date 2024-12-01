@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import main.java.Entity.Database;
 import main.java.UI.AddNewCar;
+import main.java.UI.Control.AddNewCarGUI;
 
 /**
  *
@@ -863,7 +864,7 @@ public class AdminFace extends javax.swing.JFrame {
 
     private void addNewCarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addNewCarButtonActionPerformed
         // TODO add your handling code here:
-        AddNewCar AddNewCar = new AddNewCar();
+        AddNewCarGUI AddNewCar = new AddNewCarGUI();
         AddNewCar.setVisible(true);
     }//GEN-LAST:event_addNewCarButtonActionPerformed
 
