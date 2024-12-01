@@ -30,7 +30,7 @@ public class SelectUserBuys extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         idLabel = new javax.swing.JLabel();
         selectUserIdTextField = new javax.swing.JTextField();
-        selectUserIdButton = new javax.swing.JButton();
+        showUserIdButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,13 +54,13 @@ public class SelectUserBuys extends javax.swing.JFrame {
             }
         });
 
-        selectUserIdButton.setBackground(new java.awt.Color(54, 171, 239));
-        selectUserIdButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        selectUserIdButton.setForeground(new java.awt.Color(255, 255, 255));
-        selectUserIdButton.setText("Select");
-        selectUserIdButton.addActionListener(new java.awt.event.ActionListener() {
+        showUserIdButton.setBackground(new java.awt.Color(54, 171, 239));
+        showUserIdButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        showUserIdButton.setForeground(new java.awt.Color(255, 255, 255));
+        showUserIdButton.setText("Show");
+        showUserIdButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                selectUserIdButtonActionPerformed(evt);
+                showUserIdButtonActionPerformed(evt);
             }
         });
 
@@ -87,7 +87,7 @@ public class SelectUserBuys extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(selectUserIdTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(selectUserIdButton, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(showUserIdButton, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addComponent(jLabel10))
                 .addGap(49, 49, 49))
         );
@@ -102,7 +102,7 @@ public class SelectUserBuys extends javax.swing.JFrame {
                     .addComponent(selectUserIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(selectUserIdButton)
+                    .addComponent(showUserIdButton)
                     .addComponent(cancelButton))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
@@ -126,9 +126,9 @@ public class SelectUserBuys extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_selectUserIdTextFieldActionPerformed
 
-    private void selectUserIdButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectUserIdButtonActionPerformed
+    private void showUserIdButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showUserIdButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_selectUserIdButtonActionPerformed
+    }//GEN-LAST:event_showUserIdButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         // TODO add your handling code here:
@@ -175,7 +175,7 @@ public class SelectUserBuys extends javax.swing.JFrame {
     private javax.swing.JLabel idLabel;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton selectUserIdButton;
     private javax.swing.JTextField selectUserIdTextField;
+    private javax.swing.JButton showUserIdButton;
     // End of variables declaration//GEN-END:variables
 }

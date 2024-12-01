@@ -54,7 +54,6 @@ public class AddNewCarGUI extends javax.swing.JFrame  {
         setTitle("Add New Car");
         setMinimumSize(new java.awt.Dimension(640, 400));
         setName("addNewCarFrame"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(640, 400));
         setResizable(false);
 
         container.setBackground(new java.awt.Color(255, 255, 255));
@@ -94,9 +93,8 @@ public class AddNewCarGUI extends javax.swing.JFrame  {
             }
         });
 
-        cancelButton.setBackground(new java.awt.Color(54, 171, 239));
         cancelButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        cancelButton.setForeground(new java.awt.Color(255, 255, 255));
+        cancelButton.setForeground(new java.awt.Color(54, 171, 239));
         cancelButton.setText("Cancel");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
