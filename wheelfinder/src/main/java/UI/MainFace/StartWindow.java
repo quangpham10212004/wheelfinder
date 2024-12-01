@@ -7,7 +7,7 @@ import java.sql.SQLException; // Thêm luôn import này để xử lý các ngo
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
-import main.java.Entity.
+import main.java.Entity.Database;
 import main.java.UI.MainFace.AdminDashboard;
 import main.java.UI.MainFace.UserDashboard;
 
