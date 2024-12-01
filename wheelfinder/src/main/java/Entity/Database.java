@@ -1,38 +1,46 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package main.java.Entity;
 
-import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.ResultSet;
 
-/**
- *
- * @author Quang
- */
-public class Database {
+public class Database implements AutoCloseable {  // Implement AutoCloseable
+
     private String user = "root";
     private String password = "Quang@2004";
-    private String url = "jdbc:mysql://localhost/wheelfinder";
-    private Statement statement ;
-    public Database(){
+    private String url = "jdbc:mysql://localhost:3306/wheelfinder";
+
+    private Connection connection;  // Thêm đối tượng Connection
+    private Statement statement;
+
+    public Database() {
         try {
-            Connection connection = DriverManager.getConnection(url, user, password);
+            connection = DriverManager.getConnection(url, user, password);
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
-            ResultSet.CONCUR_READ_ONLY);
-            // System.out.println("Connected successfully"); // kiem tra ket noi
-            
+                    ResultSet.CONCUR_READ_ONLY);
+            // System.out.println("Connected successfully"); // kiểm tra kết nối
         } catch (SQLException e) {
-            // TODO: handle exception
             e.printStackTrace();
-            // System.out.println("Nothing happen!");
         }
     }
-    public Statement getStatement(){
+
+    public Connection getConnection() {
+        return connection;
+    }
+
+    public Statement getStatement() {
         return statement;
+    }
+
+    @Override
+    public void close() throws SQLException {
+        if (statement != null && !statement.isClosed()) {
+            statement.close();
+        }
+        if (connection != null && !connection.isClosed()) {
+            connection.close();
+        }
     }
 }
