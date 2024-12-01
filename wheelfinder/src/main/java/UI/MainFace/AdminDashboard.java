@@ -51,25 +51,23 @@ public class AdminDashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        addNewCarDialog = new javax.swing.JDialog();
+        addNewAdminDialog = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         emailLoginButton = new javax.swing.JLabel();
-        emailLoginButton1 = new javax.swing.JLabel();
         emailLoginButton2 = new javax.swing.JLabel();
         emailLoginButton3 = new javax.swing.JLabel();
         emailLoginButton4 = new javax.swing.JLabel();
-        emailLoginButton5 = new javax.swing.JLabel();
-        emailLoginButton6 = new javax.swing.JLabel();
-        idAddNewCarTextField = new javax.swing.JTextField();
-        brandAddNewCarTextField = new javax.swing.JTextField();
-        colourAddNewCarTextField = new javax.swing.JTextField();
-        modelAddNewCarTextField = new javax.swing.JTextField();
-        priceAddNewCarTextField = new javax.swing.JTextField();
-        numberAddNewCarTextField = new javax.swing.JTextField();
-        yearAddNewCarTextField = new javax.swing.JTextField();
-        cancelAddNewCarButton = new javax.swing.JButton();
-        addAddNewCarButton = new javax.swing.JButton();
+        firstNameAddNewAdminTextField = new javax.swing.JTextField();
+        emailAddNewAdminTextField = new javax.swing.JTextField();
+        phoneNumAddNewAdminTextField = new javax.swing.JTextField();
+        confirmPassAddNewAdminTextField = new javax.swing.JTextField();
+        passAddNewAdminTextField = new javax.swing.JTextField();
+        cancelAddNewAdminrButton = new javax.swing.JButton();
+        addAddNewAdminButton = new javax.swing.JButton();
+        emailLoginButton21 = new javax.swing.JLabel();
+        lastNameAddNewAdminTextField = new javax.swing.JTextField();
+        emailLoginButton22 = new javax.swing.JLabel();
         updateCarDialog = new javax.swing.JDialog();
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -91,6 +89,25 @@ public class AdminDashboard extends javax.swing.JFrame {
         updateUpdateCarButton = new javax.swing.JButton();
         showUserBuyDialog = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
+        addNewCarDialog = new javax.swing.JDialog();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        emailLoginButton14 = new javax.swing.JLabel();
+        emailLoginButton15 = new javax.swing.JLabel();
+        emailLoginButton16 = new javax.swing.JLabel();
+        emailLoginButton17 = new javax.swing.JLabel();
+        emailLoginButton18 = new javax.swing.JLabel();
+        emailLoginButton19 = new javax.swing.JLabel();
+        emailLoginButton20 = new javax.swing.JLabel();
+        idAddNewCarTextField = new javax.swing.JTextField();
+        brandAddNewCarTextField = new javax.swing.JTextField();
+        colourAddNewCarTextField = new javax.swing.JTextField();
+        modelAddNewCarTextField = new javax.swing.JTextField();
+        priceAddNewCarTextField = new javax.swing.JTextField();
+        numberAddNewCarTextField = new javax.swing.JTextField();
+        yearAddNewCarTextField = new javax.swing.JTextField();
+        cancelAddNewCarButton = new javax.swing.JButton();
+        addAddNewCarButton = new javax.swing.JButton();
         bigContainer = new jPanelGradient();
         sideBar = new javax.swing.JPanel();
         sideBarLogo = new javax.swing.JLabel();
@@ -130,153 +147,144 @@ public class AdminDashboard extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         jPasswordField6 = new javax.swing.JPasswordField();
 
-        addNewCarDialog.setTitle("Add New Car");
-        addNewCarDialog.setBackground(new java.awt.Color(255, 255, 255));
-        addNewCarDialog.setMinimumSize(new java.awt.Dimension(640, 400));
-        addNewCarDialog.setModal(true);
-        addNewCarDialog.setResizable(false);
+        addNewAdminDialog.setTitle("Add New Admin");
+        addNewAdminDialog.setBackground(new java.awt.Color(255, 255, 255));
+        addNewAdminDialog.setMinimumSize(new java.awt.Dimension(640, 400));
+        addNewAdminDialog.setModal(true);
+        addNewAdminDialog.setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(54, 171, 239));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Add New Car");
+        jLabel8.setText("Add New Admin");
 
         emailLoginButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        emailLoginButton.setText("ID");
-
-        emailLoginButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        emailLoginButton1.setText("Brand");
+        emailLoginButton.setText("First Name");
 
         emailLoginButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        emailLoginButton2.setText("Model");
+        emailLoginButton2.setText("Phone Number");
 
         emailLoginButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        emailLoginButton3.setText("Colour");
+        emailLoginButton3.setText("Email");
 
         emailLoginButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        emailLoginButton4.setText("Year of Manufacture");
+        emailLoginButton4.setText("Password");
 
-        emailLoginButton5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        emailLoginButton5.setText("Price");
-
-        emailLoginButton6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        emailLoginButton6.setText("Current Number");
-
-        idAddNewCarTextField.addActionListener(new java.awt.event.ActionListener() {
+        firstNameAddNewAdminTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idAddNewCarTextFieldActionPerformed(evt);
+                firstNameAddNewAdminTextFieldActionPerformed(evt);
             }
         });
 
-        cancelAddNewCarButton.setBackground(new java.awt.Color(54, 171, 239));
-        cancelAddNewCarButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        cancelAddNewCarButton.setForeground(new java.awt.Color(255, 255, 255));
-        cancelAddNewCarButton.setText("Cancel");
-        cancelAddNewCarButton.addActionListener(new java.awt.event.ActionListener() {
+        cancelAddNewAdminrButton.setBackground(new java.awt.Color(54, 171, 239));
+        cancelAddNewAdminrButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cancelAddNewAdminrButton.setForeground(new java.awt.Color(255, 255, 255));
+        cancelAddNewAdminrButton.setText("Cancel");
+        cancelAddNewAdminrButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelAddNewCarButtonActionPerformed(evt);
+                cancelAddNewAdminrButtonActionPerformed(evt);
             }
         });
 
-        addAddNewCarButton.setBackground(new java.awt.Color(54, 171, 239));
-        addAddNewCarButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        addAddNewCarButton.setForeground(new java.awt.Color(255, 255, 255));
-        addAddNewCarButton.setText("Add");
-        addAddNewCarButton.addActionListener(new java.awt.event.ActionListener() {
+        addAddNewAdminButton.setBackground(new java.awt.Color(54, 171, 239));
+        addAddNewAdminButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        addAddNewAdminButton.setForeground(new java.awt.Color(255, 255, 255));
+        addAddNewAdminButton.setText("Add");
+        addAddNewAdminButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addAddNewCarButtonActionPerformed(evt);
+                addAddNewAdminButtonActionPerformed(evt);
             }
         });
+
+        emailLoginButton21.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        emailLoginButton21.setText("Last Name");
+
+        lastNameAddNewAdminTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lastNameAddNewAdminTextFieldActionPerformed(evt);
+            }
+        });
+
+        emailLoginButton22.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        emailLoginButton22.setText("Confirm Password");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(emailLoginButton1)
-                            .addComponent(emailLoginButton)
-                            .addComponent(emailLoginButton2)
-                            .addComponent(emailLoginButton3))
-                        .addGap(115, 115, 115))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(emailLoginButton5)
-                            .addComponent(emailLoginButton4)
-                            .addComponent(emailLoginButton6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(34, 34, 34)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(emailLoginButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(emailLoginButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(emailLoginButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(emailLoginButton22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(emailLoginButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel8)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(idAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(brandAddNewCarTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(modelAddNewCarTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(colourAddNewCarTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(yearAddNewCarTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(priceAddNewCarTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(cancelAddNewCarButton)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(addAddNewCarButton))
-                        .addComponent(numberAddNewCarTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(93, Short.MAX_VALUE))
+                        .addComponent(firstNameAddNewAdminTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(emailLoginButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lastNameAddNewAdminTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(cancelAddNewAdminrButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(addAddNewAdminButton))
+                    .addComponent(phoneNumAddNewAdminTextField)
+                    .addComponent(emailAddNewAdminTextField)
+                    .addComponent(passAddNewAdminTextField)
+                    .addComponent(confirmPassAddNewAdminTextField))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(46, 46, 46)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(emailLoginButton)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(emailLoginButton2)
+                            .addComponent(phoneNumAddNewAdminTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(emailLoginButton3)
+                            .addComponent(emailAddNewAdminTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(emailLoginButton4)
+                            .addComponent(passAddNewAdminTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(firstNameAddNewAdminTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(emailLoginButton21)
+                        .addComponent(lastNameAddNewAdminTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailLoginButton)
-                    .addComponent(idAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(confirmPassAddNewAdminTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emailLoginButton22))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailLoginButton1)
-                    .addComponent(brandAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailLoginButton2)
-                    .addComponent(modelAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailLoginButton3)
-                    .addComponent(colourAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailLoginButton4)
-                    .addComponent(yearAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailLoginButton5)
-                    .addComponent(priceAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailLoginButton6)
-                    .addComponent(numberAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cancelAddNewCarButton)
-                    .addComponent(addAddNewCarButton))
-                .addGap(30, 30, 30))
+                    .addComponent(cancelAddNewAdminrButton)
+                    .addComponent(addAddNewAdminButton))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout addNewCarDialogLayout = new javax.swing.GroupLayout(addNewCarDialog.getContentPane());
-        addNewCarDialog.getContentPane().setLayout(addNewCarDialogLayout);
-        addNewCarDialogLayout.setHorizontalGroup(
-            addNewCarDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout addNewAdminDialogLayout = new javax.swing.GroupLayout(addNewAdminDialog.getContentPane());
+        addNewAdminDialog.getContentPane().setLayout(addNewAdminDialogLayout);
+        addNewAdminDialogLayout.setHorizontalGroup(
+            addNewAdminDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        addNewCarDialogLayout.setVerticalGroup(
-            addNewCarDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        addNewAdminDialogLayout.setVerticalGroup(
+            addNewAdminDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -447,6 +455,162 @@ public class AdminDashboard extends javax.swing.JFrame {
         showUserBuyDialogLayout.setVerticalGroup(
             showUserBuyDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        addNewCarDialog.setTitle("Add New Admin");
+        addNewCarDialog.setBackground(new java.awt.Color(255, 255, 255));
+        addNewCarDialog.setMinimumSize(new java.awt.Dimension(640, 400));
+        addNewCarDialog.setModal(true);
+        addNewCarDialog.setResizable(false);
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(54, 171, 239));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Add New Car");
+
+        emailLoginButton14.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        emailLoginButton14.setText("ID");
+
+        emailLoginButton15.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        emailLoginButton15.setText("Brand");
+
+        emailLoginButton16.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        emailLoginButton16.setText("Model");
+
+        emailLoginButton17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        emailLoginButton17.setText("Colour");
+
+        emailLoginButton18.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        emailLoginButton18.setText("Year of Manufacture");
+
+        emailLoginButton19.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        emailLoginButton19.setText("Price");
+
+        emailLoginButton20.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        emailLoginButton20.setText("Current Number");
+
+        idAddNewCarTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idAddNewCarTextFieldActionPerformed(evt);
+            }
+        });
+
+        brandAddNewCarTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                brandAddNewCarTextFieldActionPerformed(evt);
+            }
+        });
+
+        cancelAddNewCarButton.setBackground(new java.awt.Color(54, 171, 239));
+        cancelAddNewCarButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cancelAddNewCarButton.setForeground(new java.awt.Color(255, 255, 255));
+        cancelAddNewCarButton.setText("Cancel");
+        cancelAddNewCarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelAddNewCarButtonActionPerformed(evt);
+            }
+        });
+
+        addAddNewCarButton.setBackground(new java.awt.Color(54, 171, 239));
+        addAddNewCarButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        addAddNewCarButton.setForeground(new java.awt.Color(255, 255, 255));
+        addAddNewCarButton.setText("Add");
+        addAddNewCarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addAddNewCarButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(emailLoginButton15)
+                            .addComponent(emailLoginButton14)
+                            .addComponent(emailLoginButton16)
+                            .addComponent(emailLoginButton17))
+                        .addGap(115, 115, 115))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(emailLoginButton19)
+                            .addComponent(emailLoginButton18)
+                            .addComponent(emailLoginButton20))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(idAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(brandAddNewCarTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(modelAddNewCarTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(colourAddNewCarTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(yearAddNewCarTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(priceAddNewCarTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                            .addComponent(cancelAddNewCarButton)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(addAddNewCarButton))
+                        .addComponent(numberAddNewCarTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(93, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emailLoginButton14)
+                    .addComponent(idAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emailLoginButton15)
+                    .addComponent(brandAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emailLoginButton16)
+                    .addComponent(modelAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emailLoginButton17)
+                    .addComponent(colourAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emailLoginButton18)
+                    .addComponent(yearAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emailLoginButton19)
+                    .addComponent(priceAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emailLoginButton20)
+                    .addComponent(numberAddNewCarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancelAddNewCarButton)
+                    .addComponent(addAddNewCarButton))
+                .addGap(30, 30, 30))
+        );
+
+        javax.swing.GroupLayout addNewCarDialogLayout = new javax.swing.GroupLayout(addNewCarDialog.getContentPane());
+        addNewCarDialog.getContentPane().setLayout(addNewCarDialogLayout);
+        addNewCarDialogLayout.setHorizontalGroup(
+            addNewCarDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        addNewCarDialogLayout.setVerticalGroup(
+            addNewCarDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -719,6 +883,11 @@ public class AdminDashboard extends javax.swing.JFrame {
         addNewAdminButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         addNewAdminButton.setForeground(new java.awt.Color(255, 255, 255));
         addNewAdminButton.setText("Add New Admin");
+        addNewAdminButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addNewAdminButtonActionPerformed(evt);
+            }
+        });
 
         ShowUserBuyButton.setBackground(new java.awt.Color(54, 171, 239));
         ShowUserBuyButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -918,19 +1087,19 @@ public class AdminDashboard extends javax.swing.JFrame {
         PassAdminPanel.setVisible(true);
     }//GEN-LAST:event_passwordLabelMouseClicked
 
-    private void cancelAddNewCarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelAddNewCarButtonActionPerformed
+    private void cancelAddNewAdminrButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelAddNewAdminrButtonActionPerformed
         // TODO add your handling code here:
-        addNewCarDialog.setVisible(false);
-    }//GEN-LAST:event_cancelAddNewCarButtonActionPerformed
+        addNewAdminDialog.setVisible(false);
+    }//GEN-LAST:event_cancelAddNewAdminrButtonActionPerformed
 
-    private void addAddNewCarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAddNewCarButtonActionPerformed
+    private void addAddNewAdminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAddNewAdminButtonActionPerformed
         // TODO add your handling code here:
-        addNewCarDialog.setVisible(false);
-    }//GEN-LAST:event_addAddNewCarButtonActionPerformed
+        addNewAdminDialog.setVisible(false);
+    }//GEN-LAST:event_addAddNewAdminButtonActionPerformed
 
-    private void idAddNewCarTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idAddNewCarTextFieldActionPerformed
+    private void firstNameAddNewAdminTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameAddNewAdminTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_idAddNewCarTextFieldActionPerformed
+    }//GEN-LAST:event_firstNameAddNewAdminTextFieldActionPerformed
 
     private void addNewCarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addNewCarButtonActionPerformed
         // TODO add your handling code here:
@@ -951,6 +1120,33 @@ public class AdminDashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         updateCarDialog.setVisible(false);
     }//GEN-LAST:event_updateUpdateCarButtonActionPerformed
+
+    private void idAddNewCarTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idAddNewCarTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idAddNewCarTextFieldActionPerformed
+
+    private void cancelAddNewCarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelAddNewCarButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cancelAddNewCarButtonActionPerformed
+
+    private void addAddNewCarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAddNewCarButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addAddNewCarButtonActionPerformed
+
+    private void lastNameAddNewAdminTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameAddNewAdminTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lastNameAddNewAdminTextFieldActionPerformed
+
+    private void brandAddNewCarTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brandAddNewCarTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_brandAddNewCarTextFieldActionPerformed
+
+    private void addNewAdminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addNewAdminButtonActionPerformed
+        // TODO add your handling code here:
+        addNewAdminDialog.setVisible(true);
+        addNewAdminDialog.pack();
+        addNewAdminDialog.setLocationRelativeTo(null);
+    }//GEN-LAST:event_addNewAdminButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1070,35 +1266,48 @@ public void loadUserData() {
     private javax.swing.JPanel PassAdminPanel;
     private javax.swing.JButton ShowUserBuyButton;
     private javax.swing.JPanel UserAdminPanel;
+    private javax.swing.JButton addAddNewAdminButton;
     private javax.swing.JButton addAddNewCarButton;
     private javax.swing.JButton addNewAdminButton;
+    private javax.swing.JDialog addNewAdminDialog;
     private javax.swing.JButton addNewCarButton;
     private javax.swing.JDialog addNewCarDialog;
     private javax.swing.JPanel bigContainer;
     private javax.swing.JTextField brandAddNewCarTextField;
+    private javax.swing.JButton cancelAddNewAdminrButton;
     private javax.swing.JButton cancelAddNewCarButton;
     private javax.swing.JButton cancelUpdateCarButton;
     private javax.swing.JLabel carLabel;
     private javax.swing.JPanel card;
     private javax.swing.JTextField colourAddNewCarTextField;
+    private javax.swing.JTextField confirmPassAddNewAdminTextField;
     private javax.swing.JButton deleteCarButton;
+    private javax.swing.JTextField emailAddNewAdminTextField;
     private javax.swing.JLabel emailLoginButton;
-    private javax.swing.JLabel emailLoginButton1;
     private javax.swing.JLabel emailLoginButton10;
     private javax.swing.JLabel emailLoginButton11;
     private javax.swing.JLabel emailLoginButton12;
     private javax.swing.JLabel emailLoginButton13;
+    private javax.swing.JLabel emailLoginButton14;
+    private javax.swing.JLabel emailLoginButton15;
+    private javax.swing.JLabel emailLoginButton16;
+    private javax.swing.JLabel emailLoginButton17;
+    private javax.swing.JLabel emailLoginButton18;
+    private javax.swing.JLabel emailLoginButton19;
     private javax.swing.JLabel emailLoginButton2;
+    private javax.swing.JLabel emailLoginButton20;
+    private javax.swing.JLabel emailLoginButton21;
+    private javax.swing.JLabel emailLoginButton22;
     private javax.swing.JLabel emailLoginButton3;
     private javax.swing.JLabel emailLoginButton4;
-    private javax.swing.JLabel emailLoginButton5;
-    private javax.swing.JLabel emailLoginButton6;
     private javax.swing.JLabel emailLoginButton7;
     private javax.swing.JLabel emailLoginButton8;
     private javax.swing.JLabel emailLoginButton9;
+    private javax.swing.JTextField firstNameAddNewAdminTextField;
     private javax.swing.JTextField idAddNewCarTextField;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
@@ -1112,12 +1321,14 @@ public void loadUserData() {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPasswordField jPasswordField5;
     private javax.swing.JPasswordField jPasswordField6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField lastNameAddNewAdminTextField;
     private javax.swing.JLabel logoutLabel;
     private javax.swing.JPanel mainContentPanel;
     private javax.swing.JPanel mainContentPanel1;
@@ -1125,7 +1336,9 @@ public void loadUserData() {
     private javax.swing.JTextField modelAddNewCarTextField;
     private javax.swing.JTextField newIdAddNewCarTextField1;
     private javax.swing.JTextField numberAddNewCarTextField;
+    private javax.swing.JTextField passAddNewAdminTextField;
     private javax.swing.JLabel passwordLabel;
+    private javax.swing.JTextField phoneNumAddNewAdminTextField;
     private javax.swing.JTextField priceAddNewCarTextField;
     private javax.swing.JDialog showUserBuyDialog;
     private javax.swing.JPanel sideBar;
