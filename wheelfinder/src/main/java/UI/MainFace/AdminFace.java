@@ -49,6 +49,19 @@ public class AdminFace extends javax.swing.JFrame {
     }
     public AdminFace(){
     }
+    
+    class jPanelGradient extends JPanel {
+        protected void paintComponent(Graphics g) {
+        Graphics2D g2d = (Graphics2D) g;
+        Color color1 = new Color(100,57,255);
+        Color color2 = new Color(124,245,255);
+        int width = getWidth();
+        int height = getHeight();
+        GradientPaint gradientPaint = new GradientPaint(0, 0, color1, 0 , height, color2);
+        g2d.setPaint(gradientPaint);
+        g2d.fillRect(0, 0, width, height);
+        }
+    }
 
     class jPanelGradient extends JPanel {
 

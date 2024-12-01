@@ -89,7 +89,7 @@ public class UserFace extends javax.swing.JFrame {
         showMyBuyButton.setBackground(new java.awt.Color(54, 171, 239));
         showMyBuyButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         showMyBuyButton.setForeground(new java.awt.Color(255, 255, 255));
-        showMyBuyButton.setText("Show My Buy");
+        showMyBuyButton.setText("Show My Buys");
         showMyBuyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 showMyBuyButtonActionPerformed(evt);
