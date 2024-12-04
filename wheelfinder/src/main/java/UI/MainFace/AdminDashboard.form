@@ -2,9 +2,9 @@
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Container class="javax.swing.JDialog" name="addNewAdminDialog">
+    <Container class="javax.swing.JDialog" name="addNewCarDialog">
       <Properties>
-        <Property name="title" type="java.lang.String" value="Add New Admin"/>
+        <Property name="title" type="java.lang.String" value="Add New Car"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
@@ -39,35 +39,48 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="emailLoginButton2" max="32767" attributes="0"/>
-                          <Component id="emailLoginButton4" alignment="0" max="32767" attributes="0"/>
-                          <Component id="emailLoginButton3" max="32767" attributes="0"/>
-                          <Component id="emailLoginButton22" alignment="1" max="32767" attributes="0"/>
-                          <Component id="emailLoginButton" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="firstNameAddNewAdminTextField" min="-2" pref="109" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="emailLoginButton21" min="-2" pref="100" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="lastNameAddNewAdminTextField" min="-2" pref="109" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="emailLoginButton1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="emailLoginButton" min="-2" max="-2" attributes="0"/>
+                                  <Component id="emailLoginButton2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="emailLoginButton3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="cancelAddNewAdminrButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="addAddNewAdminButton" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="emailLoginButton5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="emailLoginButton4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="emailLoginButton6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
-                          <Component id="phoneNumAddNewAdminTextField" alignment="0" max="32767" attributes="0"/>
-                          <Component id="emailAddNewAdminTextField" alignment="0" max="32767" attributes="0"/>
-                          <Component id="passAddNewAdminTextField" alignment="0" max="32767" attributes="0"/>
-                          <Component id="confirmPassAddNewAdminTextField" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="97" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                              <Component id="idAddNewCarTextField" min="-2" pref="300" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="brandAddNewCarTextField" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="modelAddNewCarTextField" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="colourAddNewCarTextField" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="yearAddNewCarTextField" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="priceAddNewCarTextField" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="cancelAddNewCarButton" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="addAddNewCarButton" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="numberAddNewCarTextField" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="93" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -76,43 +89,47 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="emailLoginButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="emailLoginButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="phoneNumAddNewAdminTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="emailLoginButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="emailAddNewAdminTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="emailLoginButton4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="passAddNewAdminTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="firstNameAddNewAdminTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="emailLoginButton21" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lastNameAddNewAdminTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="confirmPassAddNewAdminTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="emailLoginButton22" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="emailLoginButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="idAddNewCarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="cancelAddNewAdminrButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addAddNewAdminButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="emailLoginButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="brandAddNewCarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="72" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="emailLoginButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="modelAddNewCarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="emailLoginButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="colourAddNewCarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="emailLoginButton4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="yearAddNewCarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="emailLoginButton5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="priceAddNewCarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="emailLoginButton6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="numberAddNewCarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="50" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cancelAddNewCarButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addAddNewCarButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -127,7 +144,7 @@
                   <Color blue="ef" green="ab" red="36" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Add New Admin"/>
+                <Property name="text" type="java.lang.String" value="Add New Car"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="emailLoginButton">
@@ -135,7 +152,15 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="18" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="First Name"/>
+                <Property name="text" type="java.lang.String" value="ID"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="emailLoginButton1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Brand"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="emailLoginButton2">
@@ -143,7 +168,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="18" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Phone Number"/>
+                <Property name="text" type="java.lang.String" value="Model"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="emailLoginButton3">
@@ -151,7 +176,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="18" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Email"/>
+                <Property name="text" type="java.lang.String" value="Colour"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="emailLoginButton4">
@@ -159,23 +184,43 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="18" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Password"/>
+                <Property name="text" type="java.lang.String" value="Year of Manufacture"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstNameAddNewAdminTextField">
+            <Component class="javax.swing.JLabel" name="emailLoginButton5">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Price"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="emailLoginButton6">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Current Number"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="idAddNewCarTextField">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="firstNameAddNewAdminTextFieldActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="idAddNewCarTextFieldActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="emailAddNewAdminTextField">
+            <Component class="javax.swing.JTextField" name="brandAddNewCarTextField">
             </Component>
-            <Component class="javax.swing.JTextField" name="phoneNumAddNewAdminTextField">
+            <Component class="javax.swing.JTextField" name="colourAddNewCarTextField">
             </Component>
-            <Component class="javax.swing.JTextField" name="confirmPassAddNewAdminTextField">
+            <Component class="javax.swing.JTextField" name="modelAddNewCarTextField">
             </Component>
-            <Component class="javax.swing.JTextField" name="passAddNewAdminTextField">
+            <Component class="javax.swing.JTextField" name="priceAddNewCarTextField">
             </Component>
-            <Component class="javax.swing.JButton" name="cancelAddNewAdminrButton">
+            <Component class="javax.swing.JTextField" name="numberAddNewCarTextField">
+            </Component>
+            <Component class="javax.swing.JTextField" name="yearAddNewCarTextField">
+            </Component>
+            <Component class="javax.swing.JButton" name="cancelAddNewCarButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ef" green="ab" red="36" type="rgb"/>
@@ -189,10 +234,10 @@
                 <Property name="text" type="java.lang.String" value="Cancel"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelAddNewAdminrButtonActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelAddNewCarButtonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="addAddNewAdminButton">
+            <Component class="javax.swing.JButton" name="addAddNewCarButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ef" green="ab" red="36" type="rgb"/>
@@ -206,29 +251,8 @@
                 <Property name="text" type="java.lang.String" value="Add"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addAddNewAdminButtonActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addAddNewCarButtonActionPerformed"/>
               </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="emailLoginButton21">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Last Name"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="lastNameAddNewAdminTextField">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lastNameAddNewAdminTextFieldActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="emailLoginButton22">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Confirm Password"/>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -516,265 +540,6 @@
               </Group>
             </DimensionLayout>
           </Layout>
-        </Container>
-      </SubComponents>
-    </Container>
-    <Container class="javax.swing.JDialog" name="addNewCarDialog">
-      <Properties>
-        <Property name="title" type="java.lang.String" value="Add New Admin"/>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
-        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[640, 400]"/>
-        </Property>
-        <Property name="modal" type="boolean" value="true"/>
-        <Property name="resizable" type="boolean" value="false"/>
-      </Properties>
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jPanel4" alignment="0" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jPanel4" alignment="0" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel4">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-          </Properties>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="emailLoginButton15" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="emailLoginButton14" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="emailLoginButton16" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="emailLoginButton17" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="emailLoginButton19" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="emailLoginButton18" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="emailLoginButton20" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                              <Component id="idAddNewCarTextField" min="-2" pref="300" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="brandAddNewCarTextField" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
-                          <Component id="modelAddNewCarTextField" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
-                          <Component id="colourAddNewCarTextField" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
-                          <Component id="yearAddNewCarTextField" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
-                          <Component id="priceAddNewCarTextField" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
-                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="cancelAddNewCarButton" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="addAddNewCarButton" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="numberAddNewCarTextField" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace pref="93" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="emailLoginButton14" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="idAddNewCarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="emailLoginButton15" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="brandAddNewCarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="emailLoginButton16" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="modelAddNewCarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="emailLoginButton17" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="colourAddNewCarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="emailLoginButton18" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="yearAddNewCarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="emailLoginButton19" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="priceAddNewCarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="emailLoginButton20" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="numberAddNewCarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="50" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="cancelAddNewCarButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addAddNewCarButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel10">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="36" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ef" green="ab" red="36" type="rgb"/>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Add New Car"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="emailLoginButton14">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="ID"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="emailLoginButton15">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Brand"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="emailLoginButton16">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Model"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="emailLoginButton17">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Colour"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="emailLoginButton18">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Year of Manufacture"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="emailLoginButton19">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Price"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="emailLoginButton20">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Current Number"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="idAddNewCarTextField">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="idAddNewCarTextFieldActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="brandAddNewCarTextField">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="brandAddNewCarTextFieldActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="colourAddNewCarTextField">
-            </Component>
-            <Component class="javax.swing.JTextField" name="modelAddNewCarTextField">
-            </Component>
-            <Component class="javax.swing.JTextField" name="priceAddNewCarTextField">
-            </Component>
-            <Component class="javax.swing.JTextField" name="numberAddNewCarTextField">
-            </Component>
-            <Component class="javax.swing.JTextField" name="yearAddNewCarTextField">
-            </Component>
-            <Component class="javax.swing.JButton" name="cancelAddNewCarButton">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ef" green="ab" red="36" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Cancel"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelAddNewCarButtonActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="addAddNewCarButton">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ef" green="ab" red="36" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Add"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addAddNewCarButtonActionPerformed"/>
-              </Events>
-            </Component>
-          </SubComponents>
         </Container>
       </SubComponents>
     </Container>
@@ -1327,9 +1092,6 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Add New Admin"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addNewAdminButtonActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="ShowUserBuyButton">
                   <Properties>

@@ -1,7 +1,11 @@
 package main.java.Interact;
 
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import main.java.Entity.Admin;
 import main.java.Entity.Client;
@@ -9,65 +13,85 @@ import main.java.Entity.Database;
 import main.java.Entity.Operation;
 import main.java.Entity.User;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 public class ViewAllUser implements Operation {
 
-	@Override
-	public void operation(Database database, Scanner sc, User user) {
-		System.out.println();
-		ArrayList<Client> clients = new ArrayList<>();
-		ArrayList<Admin> admins = new ArrayList<>();
-		try {
-			ResultSet rs = database.getStatement().executeQuery("select * from user where typeNum = '0';");
-			while(rs.next()){
-				Client client = new Client();
-				client.setID(rs.getInt("id"));
-				client.setFirstName(rs.getString("firstName"));
-				client.setLastName(rs.getString("lastName"));
-				client.setPassword(rs.getString("passwrd"));
-				client.setPhoneNum(rs.getString("phoneNum"));
-				client.setEmail(rs.getString("email"));
-				clients.add(client);
-			}
+    @Override
+    public void operation(Database database, User user) {
+        JFrame frame = new JFrame("View All Users");
+        frame.setSize(800, 600);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setLayout(new BorderLayout());
 
-			ResultSet rs1 = database.getStatement().executeQuery("select * from user where typeNum = '1';");
-			while(rs1.next()){
-				Admin admin = new Admin();
-				admin.setID(rs1.getInt("id"));
-				admin.setFirstName(rs1.getString("firstName"));
-				admin.setLastName(rs1.getString("lastName"));
-				admin.setPassword(rs1.getString("passwrd"));
-				admin.setPhoneNum(rs1.getString("phoneNum"));
-				admin.setEmail(rs1.getString("email"));
-				admins.add(admin);
-			}
+        // Tabs for separating clients and admins
+        JTabbedPane tabbedPane = new JTabbedPane();
 
-		} catch (SQLException e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
-		System.out.println("Customer List:\n");
-		for(Client i : clients){
-			System.out.println("ID:\t"+i.getID());
-			System.out.println("First Name:\t"+i.getFirstName());
-			System.out.println("Last Name:\t"+i.getLastName());
-			System.out.println("Phone Number:\t"+i.getPhoneNum());
-			System.out.println("Email:\t"+i.getEmail());
-			System.out.println("Password:\t"+i.getPassword());
-			System.out.println("---------------------------------\n");
-		}
+        // Table for clients
+        DefaultTableModel clientModel = new DefaultTableModel();
+        clientModel.setColumnIdentifiers(new String[]{"ID", "First Name", "Last Name", "Phone Number", "Email", "Password"});
+        JTable clientTable = new JTable(clientModel);
+        JScrollPane clientScrollPane = new JScrollPane(clientTable);
 
-		System.out.println("Admin List:\n");
-		for(Admin i : admins){
-			System.out.println("ID:\t"+i.getID());
-			System.out.println("First Name:\t"+i.getFirstName());
-			System.out.println("Last Name:\t"+i.getLastName());
-			System.out.println("Phone Number:\t"+i.getPhoneNum());
-			System.out.println("Email:\t"+i.getEmail());
-			System.out.println("Password:\t"+i.getPassword());
-			System.out.println("---------------------------------\n");
-		}
-	}
-	
+        // Table for admins
+        DefaultTableModel adminModel = new DefaultTableModel();
+        adminModel.setColumnIdentifiers(new String[]{"ID", "First Name", "Last Name", "Phone Number", "Email", "Password"});
+        JTable adminTable = new JTable(adminModel);
+        JScrollPane adminScrollPane = new JScrollPane(adminTable);
+
+        // Load data
+        ArrayList<Client> clients = new ArrayList<>();
+        ArrayList<Admin> admins = new ArrayList<>();
+        try {
+            ResultSet rsClients = database.getStatement().executeQuery("SELECT * FROM user WHERE typeNum = '0';");
+            while (rsClients.next()) {
+                Client client = new Client();
+                client.setID(rsClients.getInt("id"));
+                client.setFirstName(rsClients.getString("firstName"));
+                client.setLastName(rsClients.getString("lastName"));
+                client.setPhoneNum(rsClients.getString("phoneNum"));
+                client.setEmail(rsClients.getString("email"));
+                client.setPassword(rsClients.getString("passwrd"));
+                clients.add(client);
+
+                clientModel.addRow(new Object[]{
+                        client.getID(),
+                        client.getFirstName(),
+                        client.getLastName(),
+                        client.getPhoneNum(),
+                        client.getEmail(),
+                        client.getPassword()
+                });
+            }
+
+            ResultSet rsAdmins = database.getStatement().executeQuery("SELECT * FROM user WHERE typeNum = '1';");
+            while (rsAdmins.next()) {
+                Admin admin = new Admin();
+                admin.setID(rsAdmins.getInt("id"));
+                admin.setFirstName(rsAdmins.getString("firstName"));
+                admin.setLastName(rsAdmins.getString("lastName"));
+                admin.setPhoneNum(rsAdmins.getString("phoneNum"));
+                admin.setEmail(rsAdmins.getString("email"));
+                admin.setPassword(rsAdmins.getString("passwrd"));
+                admins.add(admin);
+
+                adminModel.addRow(new Object[]{
+                        admin.getID(),
+                        admin.getFirstName(),
+                        admin.getLastName(),
+                        admin.getPhoneNum(),
+                        admin.getEmail(),
+                        admin.getPassword()
+                });
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(frame, "Error loading user data: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
+
+        // Add tabs
+        tabbedPane.addTab("Clients", clientScrollPane);
+        tabbedPane.addTab("Admins", adminScrollPane);
+
+        frame.add(tabbedPane, BorderLayout.CENTER);
+        frame.setVisible(true);
+    }
 }

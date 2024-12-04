@@ -12,5 +12,5 @@ import java.util.Scanner;
  * @author Quang
  */
 public interface Operation {
-    public void operation(Database database, Scanner sc , User user);
+    public void operation(Database database, User user);
 }

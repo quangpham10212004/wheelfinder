@@ -1,79 +1,119 @@
 package main.java.Interact;
 
-import java.util.Scanner;
-import main.java.Entity.Database;
-import main.java.Entity.Operation;
-import main.java.Entity.User;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import main.java.Entity.Buys;
+import main.java.Entity.Database;
+import main.java.Entity.Operation;
+import main.java.Entity.User;
 
-public class ShowUserBuys implements Operation{
+public class ShowUserBuys implements Operation {
     private int typeNum;
-    
-    public ShowUserBuys(int userID){
+
+    public ShowUserBuys(int userID) {
         this.typeNum = userID;
     }
-    
-    public ShowUserBuys(){}
+
+    public ShowUserBuys() {
+    }
+
     public int getTypeNum() {
         return typeNum;
     }
-    
-    
-    
-    public void operation(Database database, Scanner sc , User user){
-        try{
-            String select;
-            int tn = this.getTypeNum();
-            if(tn == 0){
-                System.out.println("Enter User ID:" );
-                int uID = sc.nextInt();
-                select = "select * from buys where user_id = '"+uID+"';";
+
+    @Override
+    public void operation(Database database,User user) {
+        JFrame frame = new JFrame("User Purchase History");
+        frame.setSize(600, 400);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setLayout(new BorderLayout());
+
+        JTextArea displayArea = new JTextArea();
+        displayArea.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane(displayArea);
+
+        JPanel inputPanel = new JPanel();
+        JLabel userIdLabel = new JLabel("Enter User ID (if admin): ");
+        JTextField userIdField = new JTextField(10);
+        JButton showButton = new JButton("Show Purchases");
+
+        inputPanel.add(userIdLabel);
+        inputPanel.add(userIdField);
+        inputPanel.add(showButton);
+
+        frame.add(inputPanel, BorderLayout.NORTH);
+        frame.add(scrollPane, BorderLayout.CENTER);
+
+        showButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                displayArea.setText("");
+                try {
+                    String select;
+                    int tn = getTypeNum();
+                    if (tn == 0) {
+                        if (userIdField.getText().isEmpty()) {
+                            JOptionPane.showMessageDialog(frame, "Please enter a User ID!", "Error", JOptionPane.ERROR_MESSAGE);
+                            return;
+                        }
+                        int uID = Integer.parseInt(userIdField.getText());
+                        select = "SELECT * FROM buys WHERE user_id = '" + uID + "';";
+                    } else {
+                        select = "SELECT * FROM buys WHERE user_id = '" + user.getID() + "';";
+                    }
+
+                    ResultSet rs = database.getStatement().executeQuery(select);
+                    double total = 0;
+                    ArrayList<Integer> carIDs = new ArrayList<>();
+                    ArrayList<String> times = new ArrayList<>();
+
+                    if (!rs.next()) {
+                        displayArea.append("No purchases found.\n");
+                        return;
+                    }
+                    do {
+                        int car_id = rs.getInt("car_id");
+                        carIDs.add(car_id);
+                        times.add(rs.getString("timeBuy"));
+                        total += rs.getDouble("totalFee");
+                    } while (rs.next());
+
+                    displayArea.append("Client's Information:\n");
+                    ResultSet userRs = database.getStatement().executeQuery("SELECT * FROM user WHERE id = '" + user.getID() + "';");
+                    userRs.next();
+                    displayArea.append("Full Name: " + userRs.getString("lastName") + " " + userRs.getString("firstName") + "\n");
+                    displayArea.append("Email: " + userRs.getString("email") + "\n");
+                    displayArea.append("Phone Number: " + userRs.getString("phoneNum") + "\n");
+                    displayArea.append("\nCars Purchased:\n");
+                    displayArea.append("---------------------------------\n");
+
+                    int dem = 0;
+                    for (Integer id : carIDs) {
+                        ResultSet carRs = database.getStatement().executeQuery("SELECT * FROM car WHERE ID = '" + id + "';");
+                        carRs.next();
+                        displayArea.append("ID: " + carRs.getInt("ID") + "\n");
+                        displayArea.append("Car's Name: " + carRs.getString("brand") + " " + carRs.getString("model") + " " + carRs.getString("color") + "\n");
+                        displayArea.append("Year Of Manufacture: " + carRs.getString("yearRelease") + "\n");
+                        displayArea.append("Price: " + carRs.getDouble("price") + "$\n");
+                        displayArea.append("Bought At: " + times.get(dem) + "\n");
+                        displayArea.append("---------------------------------\n");
+                        dem++;
+                    }
+                    displayArea.append("Total Fee: " + total + "$\n");
+
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(frame, "Error retrieving data. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+                    ex.printStackTrace();
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(frame, "Invalid User ID format!", "Error", JOptionPane.ERROR_MESSAGE);
+                }
             }
-            else{
-                select = "select * from buys where user_id = '"+user.getID()+"';";
-            }
-            ResultSet rs = database.getStatement().executeQuery(select);
-            double total = 0;
-            ArrayList<Integer> carIDs = new ArrayList<>();
-            ArrayList<String> times = new ArrayList<>();
-            if(!rs.next()){
-                System.out.println("You have not bought a car yet ");
-                return;
-            }
-            while(rs.next()){
-                int car_id = rs.getInt("car_id");
-                carIDs.add(car_id);
-                times.add(rs.getString("timeBuy"));
-                total+=(rs.getDouble("totalFee"));
-            }
-            ResultSet rs3 = database.getStatement().executeQuery("Select * from user where id ='"+user.getID()+"'; "); // tim thong tin cua nguoi mua 
-            rs3.next();
-            System.out.println("Client's information is:");
-            System.out.println("# Full Name: "+rs3.getString("lastName")+" "+rs3.getString("firstName"));
-            System.out.println("# Email: "+rs3.getString("email"));
-            System.out.println("# Phone Number: "+rs3.getString("phoneNum"));
-            System.out.println("# Your Cars: ");
-            System.out.println("---------------------------------\n");
-            int dem = 0;
-            for(Integer id : carIDs){
-                ResultSet rs1 = database.getStatement().executeQuery("select * from car where ID = '"+id+"';");
-                rs1.next();
-                System.out.println("# ID: "+ rs1.getInt("ID"));
-                System.out.println("# Car's Name: "+ rs1.getString("brand") +" "+rs1.getString("model")+" "+rs1.getString("color"));
-                System.out.println("# Year Of Manufacture: "+rs1.getString("yearRelease"));
-                System.out.println("# Price: "+rs1.getDouble("price")+"$");
-                System.out.println("# Bought At: "+times.get(dem));
-                dem++;
-                System.out.println("---------------------------------\n");
-            }
-            System.out.println("Your Total Fee is: "+total+"$");    
-            
-        }catch(SQLException e){
-            e.printStackTrace();
-        }
-        
+        });
+
+        frame.setVisible(true);
     }
 }

@@ -76,5 +76,5 @@ public abstract class User {
         this.password = password;
     }
     
-    public abstract void showList(Database database, Scanner sc);
+    public abstract void showList(Database database, User user);
 }
