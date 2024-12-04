@@ -82,6 +82,10 @@ public class AddNewAccount implements Operation {
                 String email = emailField.getText();
                 String password = new String(passwordField.getPassword());
                 String rePassword = new String(rePasswordField.getPassword());
+                
+                if(firstName.isEmpty() || lastName.isEmpty() || phoneNum.isEmpty() || email.isEmpty() || password.isEmpty() || rePassword.isEmpty()){
+                    JOptionPane.showMessageDialog(frame, "vui lòng điền đầy đủ thông tin!", "Error", JOptionPane.ERROR_MESSAGE);
+                }
 
                 if (!password.equals(rePassword)) {
                     JOptionPane.showMessageDialog(frame, "Passwords do not match!", "Error", JOptionPane.ERROR_MESSAGE);
@@ -97,7 +101,7 @@ public class AddNewAccount implements Operation {
                     }
 
                     if (emails.contains(email)) {
-                        JOptionPane.showMessageDialog(frame, "This email is already used. Please try another email.", "Error", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(frame, "Email này đã tồn tại. Vui lòng sử dụng email khác", "Error", JOptionPane.WARNING_MESSAGE);
                         return;
                     }
 

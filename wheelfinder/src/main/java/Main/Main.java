@@ -59,7 +59,7 @@ public class Main {
         // Xử lý sự kiện nút "Create Account"
         createAccountButton.addActionListener(e -> {
             new AddNewAccount(0).operation(database, null);
-            JOptionPane.showMessageDialog(frame, "Account created successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            frame.dispose();
         });
 
         // Xử lý sự kiện nút "Login"
